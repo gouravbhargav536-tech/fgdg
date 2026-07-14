@@ -1,0 +1,6 @@
+{
+  "name": "ASHFI - Amateur Soft Hockey Federation",
+  "description": "The official web portal of the Amateur Soft Hockey Federation of India (ASHFI), featuring the national governing board, office bearers, game guidelines, Indian Soft Hockey League (ISHL), tournaments, and official rules.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
