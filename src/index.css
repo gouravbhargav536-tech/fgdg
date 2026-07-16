@@ -1,21 +1,188 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
+/* Multi-Color Theme Variables (Aligned with user specifications) */
+:root {
+  --theme-bg: #0B1220;
+  --theme-heading: #FFFFFF;
+  --theme-body: #C7D6EC;
+  --theme-accent: #FAC775;
+  --theme-card: #121B2D;
+  --theme-border: rgba(199, 214, 236, 0.15);
+  
+  --theme-primary: var(--theme-heading);
+  --theme-primary-dark: var(--theme-bg);
+  --theme-primary-light: var(--theme-accent);
+  --theme-accent-hover: var(--theme-accent);
+  --theme-accent-alpha10: rgba(250, 199, 117, 0.1);
+  --theme-glow: rgba(250, 199, 117, 0.35);
+  --theme-glow-alt: rgba(199, 214, 236, 0.35);
+}
+
+body, 
+main,
+section,
+footer,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+a,
+.border,
+.bg-white,
+.bg-slate-900,
+.bg-slate-950 {
+  transition: background-color 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+body {
+  background: var(--theme-bg) !important;
+  color: var(--theme-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.text-slate-900,
+.dark\:text-white,
+.text-navy,
+.text-blue-900,
+label,
+strong {
+  color: var(--theme-heading) !important;
+}
+
+p,
+li,
+span:not(.text-pink-500):not(.text-pink-600):not(.text-accent):not(.text-gold),
+.text-slate-600,
+.text-slate-700,
+.text-slate-800,
+.text-slate-500,
+.text-slate-400,
+.text-gray-600,
+.text-gray-500,
+.dark\:text-slate-300,
+.dark\:text-slate-400 {
+  color: var(--theme-body) !important;
+}
+
+/* Secondary semi-transparent elements for clean hierarchies */
+.text-slate-400, .text-gray-400 {
+  opacity: 0.85;
+}
+
+/* Form input, select and textarea consistency */
+input,
+textarea,
+select {
+  background-color: var(--theme-card) !important;
+  color: var(--theme-heading) !important;
+  border-color: var(--theme-border) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--theme-body) !important;
+  opacity: 0.6;
+}
+
+/* Table components styling */
+th, td {
+  color: var(--theme-body) !important;
+  border-color: var(--theme-border) !important;
+}
+
+thead th {
+  color: var(--theme-heading) !important;
+  background-color: var(--theme-card) !important;
+}
+
+/* Accent/highlight text overrides: used for names, links, badges, action tags */
+.text-pink-600,
+.text-pink-500,
+.text-blue-600,
+.text-sky-400,
+.text-sky-500,
+.text-accent,
+.text-gold,
+.text-yellow-500,
+.text-yellow-400 {
+  color: var(--theme-accent) !important;
+}
+
+/* Card and box background colors override */
+.bg-white,
+.bg-slate-50,
+.bg-slate-100,
+.bg-slate-900,
+.bg-slate-950,
+.dark\:bg-slate-900,
+.dark\:bg-slate-950,
+.bg-slate-900\/50,
+.bg-slate-800\/50 {
+  background-color: var(--theme-card) !important;
+}
+
+/* Divider & border colors override */
+.border,
+.border-t,
+.border-b,
+.border-l,
+.border-r,
+.border-slate-200,
+.border-slate-800,
+.dark\:border-slate-800,
+.border-slate-100,
+.border-pink-200\/30 {
+  border-color: var(--theme-border) !important;
+}
+
+/* Interactive solid button hover accentuation */
+button.bg-pink-600,
+button.bg-pink-500,
+button.bg-blue-600,
+button.bg-accent,
+a.bg-pink-600,
+a.bg-pink-500,
+a.bg-accent {
+  background: var(--theme-accent) !important;
+  color: var(--theme-bg) !important;
+}
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Oswald", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-  --color-primary: #0B1F3A;
-  --color-primary-dark: #071527;
-  --color-primary-light: #1D4ED8;
-  --color-accent: #EEB902;
-  --color-accent-hover: #D49B00;
-  --color-gold: #EEB902;
-  --color-warm: #F8FAFC;
-  --color-navy: #0B1F3A;
-  --color-text-main: #0F172A;
+  --color-primary: var(--theme-heading);
+  --color-primary-dark: var(--theme-bg);
+  --color-primary-light: var(--theme-accent);
+  --color-accent: var(--theme-accent);
+  --color-accent-hover: var(--theme-accent);
+  --color-gold: var(--theme-accent);
+  --color-warm: var(--theme-card);
+  --color-navy: var(--theme-bg);
+  --color-text-main: var(--theme-body);
   --color-live-badge: #E63946;
+
+  /* Tailwind Color Overrides for fully automated theme customization */
+  --color-blue-900: var(--theme-bg);
+  --color-blue-800: var(--theme-card);
+  --color-blue-700: var(--theme-accent);
+  --color-blue-600: var(--theme-accent);
+  --color-blue-500: var(--theme-accent);
+  --color-blue-200: var(--theme-border);
+  --color-blue-50: var(--theme-card);
+  
+  --color-pink-600: var(--theme-accent);
+  --color-pink-500: var(--theme-accent);
+  --color-pink-100: var(--theme-accent-alpha10);
+  
+  --color-sky-700: var(--theme-accent);
   
   --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
   --animate-pulse-slow: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -33,31 +200,23 @@
   }
 }
 
-/* Custom Scrollbar Styles */
+/* Custom Scrollbar Styles (Fully Integrated with Active Theme Colors) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #0B1F3A;
+  background: var(--theme-bg) !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0B1F3A;
+  background: var(--theme-border) !important;
   border-radius: 4px;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #1D4ED8;
-}
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #EEB902;
+  background: var(--theme-accent) !important;
 }
 
 html {
@@ -129,41 +288,41 @@ body.day-mode {
 body.day-mode h1,
 body.day-mode h2,
 body.day-mode h3 {
-  color: #1E3A8A !important; /* Beautiful Royal Blue */
-  text-shadow: 0 1px 2px rgba(219, 39, 119, 0.08); /* Minimal soft pink drop shadow for visual glow */
+  color: var(--theme-primary-light) !important; /* Dynamic Theme Blue/Accent */
+  text-shadow: 0 1px 2px var(--theme-accent-alpha10); /* Minimal soft accent drop shadow for visual glow */
 }
 
 body.day-mode .text-primary {
-  color: #1D4ED8 !important; /* Premium Blue */
+  color: var(--theme-primary-light) !important; /* Premium Blue */
 }
 
 body.day-mode .text-pink-600 {
-  color: #DB2777 !important; /* Beautiful hot pink accent */
+  color: var(--theme-accent) !important; /* Beautiful hot pink accent */
 }
 
 body.day-mode .bg-primary {
-  background-color: #1D4ED8 !important; /* Royal Blue */
+  background-color: var(--theme-primary-light) !important; /* Royal Blue */
 }
 
-/* Day Mode side-shadow animated effect (pulsing pink, blue, and white side glow) */
+/* Day Mode side-shadow animated effect (pulsing side glow) */
 .side-shadow-animated {
   animation: side-shadow-glow 6s ease-in-out infinite;
 }
 
 @keyframes side-shadow-glow {
   0% {
-    box-shadow: -15px 0 35px -12px rgba(219, 39, 119, 0.35), 15px 0 35px -12px rgba(29, 78, 216, 0.35);
+    box-shadow: -15px 0 35px -12px var(--theme-glow), 15px 0 35px -12px var(--theme-glow-alt);
   }
   50% {
-    box-shadow: -22px 0 45px -8px rgba(29, 78, 216, 0.45), 22px 0 45px -8px rgba(219, 39, 119, 0.45);
+    box-shadow: -22px 0 45px -8px var(--theme-glow-alt), 22px 0 45px -8px var(--theme-glow);
   }
   100% {
-    box-shadow: -15px 0 35px -12px rgba(219, 39, 119, 0.35), 15px 0 35px -12px rgba(29, 78, 216, 0.35);
+    box-shadow: -15px 0 35px -12px var(--theme-glow), 15px 0 35px -12px var(--theme-glow-alt);
   }
 }
 
 body.dark {
-  background-color: #0B1F3A;
+  background-color: var(--theme-primary) !important;
   color: #F8FAFC;
 }
 

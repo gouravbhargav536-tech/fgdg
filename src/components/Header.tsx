@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Users, Activity, BarChart2, Video, Mail, Home, BookOpen, Award, Camera, Heart, ShieldAlert, Trophy, Globe, Newspaper } from 'lucide-react';
+import { Menu, X, Sun, Moon, Users, Activity, BarChart2, Video, Mail, Home, BookOpen, Award, Camera, Heart, ShieldAlert, Trophy, Globe, Newspaper, Palette } from 'lucide-react';
 
 interface HeaderProps {
   darkMode: boolean;
@@ -8,11 +8,37 @@ interface HeaderProps {
   setActiveSection: (section: string) => void;
   division: 'Men' | 'Women';
   setDivision: (value: 'Men' | 'Women') => void;
+  colorTheme: string;
+  setColorTheme: (value: string) => void;
 }
 
-export default function Header({ darkMode, setDarkMode, activeSection, setActiveSection, division, setDivision }: HeaderProps) {
+export default function Header({ darkMode, setDarkMode, activeSection, setActiveSection, division, setDivision, colorTheme, setColorTheme }: HeaderProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [themeModalOpen, setThemeModalOpen] = useState(false);
+
+  const themeColors = [
+    { id: 'navy', name: 'Navy', colorCode: '#0B1220', bgPreview: 'linear-gradient(135deg, #0B1220 0%, #122240 100%)' },
+    { id: 'deep-forest', name: 'Forest Green', colorCode: '#052016', bgPreview: 'linear-gradient(135deg, #052016 0%, #0D3E2F 100%)' },
+    { id: 'sunset-glow', name: 'Sunset Violet', colorCode: '#1E122A', bgPreview: 'linear-gradient(135deg, #1E122A 0%, #3B1B3C 50%, #5E263D 100%)' },
+    { id: 'indigo', name: 'Indigo Blue', colorCode: '#12102A', bgPreview: 'linear-gradient(135deg, #12102A 0%, #1B173E 100%)' },
+    { id: 'obsidian-crimson', name: 'Crimson Rose', colorCode: '#18030B', bgPreview: 'linear-gradient(135deg, #18030B 0%, #3F0C1F 100%)' },
+    { id: 'nordic-aurora', name: 'Teal Aurora', colorCode: '#081C1C', bgPreview: 'linear-gradient(135deg, #081C1C 0%, #0C3C3B 100%)' },
+    { id: 'royal-amber', name: 'Golden Amber', colorCode: '#171105', bgPreview: 'linear-gradient(135deg, #171105 0%, #2F2107 100%)' },
+    { id: 'plum-velvet', name: 'Plum Grape', colorCode: '#14051B', bgPreview: 'linear-gradient(135deg, #14051B 0%, #2E103E 100%)' },
+    { id: 'cyber-teal', name: 'Cyber Cyan', colorCode: '#020C1B', bgPreview: 'linear-gradient(135deg, #020C1B 0%, #0A2E5C 100%)' },
+    { id: 'light-blue', name: 'Light Blue', colorCode: '#E6F1FB', bgPreview: 'linear-gradient(135deg, #E6F1FB 0%, #F5FAFE 100%)' },
+    { id: 'gradient-blue', name: 'Gradient Blue', colorCode: '#123354', bgPreview: 'linear-gradient(160deg, #0B1220 0%, #123354 60%, #185FA5 130%)' },
+    { id: 'mint', name: 'Mint Green', colorCode: '#EAF3DE', bgPreview: 'linear-gradient(135deg, #EAF3DE 0%, #F5FBF6 100%)' },
+    { id: 'citrus-cream', name: 'Citrus Yellow', colorCode: '#FDF5E2', bgPreview: 'linear-gradient(135deg, #FDF5E2 0%, #FFFDF8 100%)' },
+    { id: 'lilac-mist', name: 'Lilac Purple', colorCode: '#F0EBFC', bgPreview: 'linear-gradient(135deg, #F0EBFC 0%, #FAFAFF 100%)' },
+    { id: 'rose-quartz', name: 'Rose Quartz', colorCode: '#FCEEEB', bgPreview: 'linear-gradient(135deg, #FCEEEB 0%, #FFF9F8 100%)' },
+    { id: 'emerald-gold', name: 'Emerald Gold', colorCode: '#062E1B', bgPreview: 'linear-gradient(135deg, #062E1B 0%, #124C30 100%)' },
+    { id: 'neon-tokyo', name: 'Neon Tokyo', colorCode: '#0D0826', bgPreview: 'linear-gradient(135deg, #0D0826 0%, #210E4B 100%)' },
+    { id: 'coral-peach', name: 'Coral Peach', colorCode: '#FFF0EA', bgPreview: 'linear-gradient(135deg, #FFF0EA 0%, #FFF8F5 100%)' },
+    { id: 'sage-stone', name: 'Sage Stone', colorCode: '#EDF1EC', bgPreview: 'linear-gradient(135deg, #EDF1EC 0%, #F6F8F5 100%)' },
+    { id: 'electric-violet', name: 'Electric Violet', colorCode: '#1A0033', bgPreview: 'linear-gradient(135deg, #1A0033 0%, #3D0066 100%)' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,9 +48,9 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when drawer is open
+  // Lock body scroll when drawer or theme modal is open
   useEffect(() => {
-    if (drawerOpen) {
+    if (drawerOpen || themeModalOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -32,7 +58,7 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
     return () => {
       document.body.style.overflow = '';
     };
-  }, [drawerOpen]);
+  }, [drawerOpen, themeModalOpen]);
 
   // Main menu items requested by the user
   const navLinks = [
@@ -116,6 +142,21 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
             {/* Controls (Theme Toggle & Drawer Trigger) */}
             <div className="flex items-center gap-2.5">
               
+              {/* Single "Change Theme" Button with Palette icon */}
+              <button
+                onClick={() => setThemeModalOpen(true)}
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-300 cursor-pointer shadow-md border flex items-center justify-center gap-2 select-none font-mono font-black text-[10px] uppercase tracking-wider ${
+                  !darkMode 
+                    ? 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50' 
+                    : 'bg-slate-900 border-slate-800 text-slate-200 hover:bg-slate-800'
+                }`}
+                title="Change Color Theme"
+                aria-label="Change Color Theme"
+              >
+                <Palette className="w-4 h-4 text-pink-500" />
+                <span>Change Theme</span>
+              </button>
+
               {/* Theme Mode toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
@@ -213,32 +254,51 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
           </div>
 
           {/* Theme selection quick toggle */}
-          <div className="border-t border-slate-200 dark:border-slate-800 pt-4 mt-auto space-y-2">
-            <span className="text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest block px-1">
-              Appearance mode
-            </span>
-            <div className="grid grid-cols-2 gap-1.5 p-1 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-150 dark:border-slate-850">
+          <div className="border-t border-slate-200 dark:border-slate-800 pt-4 mt-auto space-y-4">
+            <div className="space-y-1.5">
+              <span className="text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest block px-1">
+                Appearance mode
+              </span>
+              <div className="grid grid-cols-2 gap-1.5 p-1 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-150 dark:border-slate-850">
+                <button
+                  onClick={() => setDarkMode(false)}
+                  className={`py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
+                    !darkMode 
+                      ? 'bg-gradient-to-r from-pink-500 to-blue-600 text-white shadow-md transform scale-[1.03]' 
+                      : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+                  }`}
+                >
+                  <Sun className={`w-3.5 h-3.5 ${!darkMode ? 'text-white animate-spin-slow' : 'text-yellow-500'}`} />
+                  <span>Day</span>
+                </button>
+                <button
+                  onClick={() => setDarkMode(true)}
+                  className={`py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
+                    darkMode 
+                      ? 'bg-slate-800 text-white shadow-md' 
+                      : 'text-slate-500 hover:text-slate-800'
+                  }`}
+                >
+                  <Moon className="w-3.5 h-3.5 text-blue-400" />
+                  <span>Night</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Multiple Color Palette Theme selection */}
+            <div className="space-y-2">
+              <span className="text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest block px-1">
+                Color Theme Accent
+              </span>
               <button
-                onClick={() => setDarkMode(false)}
-                className={`py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
-                  !darkMode 
-                    ? 'bg-gradient-to-r from-pink-500 to-blue-600 text-white shadow-md transform scale-[1.03]' 
-                    : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
-                }`}
+                onClick={() => {
+                  setDrawerOpen(false);
+                  setThemeModalOpen(true);
+                }}
+                className="w-full py-2.5 px-4 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-[10px] font-mono font-black uppercase tracking-wider flex items-center justify-center gap-2 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all cursor-pointer"
               >
-                <Sun className={`w-3.5 h-3.5 ${!darkMode ? 'text-white animate-spin-slow' : 'text-yellow-500'}`} />
-                <span>Day</span>
-              </button>
-              <button
-                onClick={() => setDarkMode(true)}
-                className={`py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
-                  darkMode 
-                    ? 'bg-slate-800 text-white shadow-md' 
-                    : 'text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                <Moon className="w-3.5 h-3.5 text-blue-400" />
-                <span>Night</span>
+                <Palette className="w-4 h-4 text-pink-500" />
+                <span>Change Theme Color</span>
               </button>
             </div>
           </div>
@@ -255,6 +315,96 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
 
         </div>
       </div>
+
+      {/* Theme selection Pop-up Modal (20 Mixed Gradients) */}
+      {themeModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          {/* Backdrop blur overlay */}
+          <div 
+            className="fixed inset-0 bg-slate-950/80 backdrop-blur-md cursor-pointer transition-opacity duration-300"
+            onClick={() => setThemeModalOpen(false)}
+          />
+          
+          {/* Pop-up Window Card */}
+          <div 
+            className="w-full max-w-2xl rounded-3xl border shadow-2xl p-6 sm:p-8 relative z-10 transition-all duration-300 animate-fade-in-up"
+            style={{ 
+              backgroundColor: 'var(--theme-card)', 
+              borderColor: 'var(--theme-border)',
+              color: 'var(--theme-body)'
+            }}
+          >
+            {/* Header section with title and close X button */}
+            <div className="flex items-start justify-between gap-4 border-b pb-4 animate-none" style={{ borderColor: 'var(--theme-border)' }}>
+              <div>
+                <h3 className="text-base sm:text-lg font-display font-black uppercase tracking-wider flex items-center gap-2" style={{ color: 'var(--theme-heading)' }}>
+                  <Palette className="w-5 h-5 text-pink-500 animate-bounce" />
+                  Select Space Theme Color
+                </h3>
+                <p className="text-[10px] sm:text-[11px] mt-1 text-slate-400 dark:text-slate-400 font-sans tracking-wide">
+                  Choose from 20 custom mixed-gradient palettes to dynamically personalize your workspace and training experience.
+                </p>
+              </div>
+              <button 
+                onClick={() => setThemeModalOpen(false)}
+                className="p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-white transition-all cursor-pointer"
+                title="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* 15 theme choices grid layout */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mt-6 max-h-[60vh] overflow-y-auto pr-1">
+              {themeColors.map((theme) => {
+                const isSelected = colorTheme === theme.id;
+                return (
+                  <button
+                    key={theme.id}
+                    onClick={() => setColorTheme(theme.id)}
+                    className={`p-3 rounded-2xl border text-center transition-all duration-300 flex flex-col items-center justify-between gap-2.5 cursor-pointer relative group ${
+                      isSelected 
+                        ? 'border-pink-500 bg-pink-500/5 shadow-md scale-105' 
+                        : 'border-slate-200 dark:border-slate-800 hover:border-pink-300 dark:hover:border-slate-700 bg-slate-50/50 dark:bg-slate-900/30'
+                    }`}
+                  >
+                    {/* Circle Swatch Preview with color gradients */}
+                    <div 
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border shadow-sm transition-transform duration-300 group-hover:scale-110 flex items-center justify-center ${
+                        isSelected ? 'ring-2 ring-pink-500 ring-offset-2 dark:ring-offset-slate-900' : 'border-slate-200 dark:border-slate-800'
+                      }`}
+                      style={{ background: theme.bgPreview }}
+                    >
+                      {isSelected && (
+                        <div className="w-2 h-2 rounded-full bg-white shadow-md animate-pulse" />
+                      )}
+                    </div>
+
+                    {/* Text Label */}
+                    <span 
+                      className={`text-[9px] font-black uppercase tracking-wider block leading-tight ${
+                        isSelected ? 'text-pink-600 dark:text-pink-400 font-black' : 'text-slate-500 dark:text-slate-400'
+                      }`}
+                    >
+                      {theme.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Modal action buttons */}
+            <div className="flex justify-end pt-4 border-t" style={{ borderColor: 'var(--theme-border)' }}>
+              <button
+                onClick={() => setThemeModalOpen(false)}
+                className="px-6 py-2 bg-gradient-to-r from-blue-900 to-sky-700 text-white font-mono font-black text-[10px] uppercase tracking-widest rounded-xl hover:brightness-105 active:translate-y-0.5 shadow-md transition-all cursor-pointer"
+              >
+                Save & Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
