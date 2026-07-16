@@ -79,6 +79,35 @@ export default function App() {
   return (
     <div className="relative overflow-x-hidden min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 flex flex-col">
       
+      {/* Interactive Water Wave Side Accents for Day Mode */}
+      {!darkMode && (
+        <>
+          {/* Left Water Wave */}
+          <div className="fixed left-0 top-[80px] bottom-0 w-8 sm:w-16 md:w-24 pointer-events-none overflow-hidden z-0 hidden lg:block opacity-65">
+            <svg className="w-full h-full" viewBox="0 0 100 1000" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Wave 1 */}
+              <path className="wave-animate-1" d="M0,0 Q40,100 15,200 T40,400 T15,600 T40,800 T15,1000 L0,1000 Z" fill="rgba(59, 130, 246, 0.15)" />
+              {/* Wave 2 */}
+              <path className="wave-animate-2" d="M0,0 Q55,120 20,240 T55,480 T20,720 T55,960 L0,1000 Z" fill="rgba(236, 72, 153, 0.12)" />
+              {/* Wave 3 */}
+              <path className="wave-animate-3" d="M0,0 Q25,80 8,160 T25,320 T8,480 T25,640 T8,800 T25,960 L0,1000 Z" fill="rgba(29, 78, 216, 0.08)" />
+            </svg>
+          </div>
+
+          {/* Right Water Wave */}
+          <div className="fixed right-0 top-[80px] bottom-0 w-8 sm:w-16 md:w-24 pointer-events-none overflow-hidden z-0 hidden lg:block opacity-65">
+            <svg className="w-full h-full" viewBox="0 0 100 1000" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Wave 1 */}
+              <path className="wave-animate-1" d="M100,0 Q60,100 85,200 T60,400 T85,600 T60,800 T85,1000 L100,1000 Z" fill="rgba(59, 130, 246, 0.15)" />
+              {/* Wave 2 */}
+              <path className="wave-animate-2" d="M100,0 Q45,120 80,240 T45,480 T80,720 T45,960 L100,1000 Z" fill="rgba(236, 72, 153, 0.12)" />
+              {/* Wave 3 */}
+              <path className="wave-animate-3" d="M100,0 Q75,80 92,160 T75,320 T92,480 T75,640 T92,800 T75,960 L100,1000 Z" fill="rgba(29, 78, 216, 0.08)" />
+            </svg>
+          </div>
+        </>
+      )}
+
       {/* Dynamic Header navbar */}
       <Header 
         darkMode={darkMode} 

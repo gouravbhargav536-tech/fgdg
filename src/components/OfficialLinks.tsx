@@ -26,12 +26,6 @@ const LINKS: OfficialLink[] = [
     title: 'ETV Bharat News: Ashutosh Appointed ASHFI President',
     imageUrl: 'https://i.postimg.cc/tJN0ntps/Screenshot-2026-07-15-135443.png',
     url: 'https://www.etvbharat.com/hi/!state/ashutosh-became-the-president-of-indian-soft-hockey-federation-rajasthan-news-rjs25012101119'
-  },
-  {
-    id: 'link-4',
-    title: 'Special Hockey International',
-    imageUrl: 'https://specialhockeyinternational.org/wp-content/uploads/2023/04/SHI_logo.png',
-    url: 'https://specialhockeyinternational.org/'
   }
 ];
 

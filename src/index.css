@@ -70,25 +70,60 @@ body {
   @apply antialiased selection:bg-accent selection:text-white transition-colors duration-300;
 }
 
-/* Premium Animated Day Mode styles (vivid pink, blue, and white palette) */
+/* Premium Animated Day Mode styles (pure white background with beautiful water wave side accents) */
 body.day-mode {
-  background: linear-gradient(135deg, #FFF0F5 0%, #EEF2FF 35%, #FFFFFF 65%, #FCE7F3 100%);
-  background-size: 300% 300%;
-  animation: dayModeGradientBg 12s ease-in-out infinite;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
   color: #0B1F3A; /* Deep Navy Blue for high contrast readability */
   transition: all 0.5s ease-in-out;
 }
 
-@keyframes dayModeGradientBg {
+@keyframes waveFlowOne {
   0% {
-    background-position: 0% 50%;
+    transform: translateY(0) scaleX(1) translateX(0);
   }
   50% {
-    background-position: 100% 50%;
+    transform: translateY(-30px) scaleX(1.1) translateX(3px);
   }
   100% {
-    background-position: 0% 50%;
+    transform: translateY(0) scaleX(1) translateX(0);
   }
+}
+
+@keyframes waveFlowTwo {
+  0% {
+    transform: translateY(0) scaleX(1.15) translateX(0);
+  }
+  50% {
+    transform: translateY(-45px) scaleX(0.95) translateX(-5px);
+  }
+  100% {
+    transform: translateY(0) scaleX(1.15) translateX(0);
+  }
+}
+
+@keyframes waveFlowThree {
+  0% {
+    transform: translateY(0) scaleX(1) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) scaleX(1.05) translateX(2px);
+  }
+  100% {
+    transform: translateY(0) scaleX(1) translateX(0);
+  }
+}
+
+.wave-animate-1 {
+  animation: waveFlowOne 10s ease-in-out infinite;
+}
+
+.wave-animate-2 {
+  animation: waveFlowTwo 14s ease-in-out infinite;
+}
+
+.wave-animate-3 {
+  animation: waveFlowThree 12s ease-in-out infinite;
 }
 
 body.day-mode h1,

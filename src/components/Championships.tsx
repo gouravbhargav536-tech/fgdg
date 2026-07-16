@@ -14,6 +14,7 @@ interface ChampionshipEvent {
   winnerWomen: string;
   runnerUpWomen: string;
   details: string[];
+  imageUrl: string;
 }
 
 const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
@@ -28,6 +29,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     runnerUpMen: "Haryana Bulls",
     winnerWomen: "Delhi Fighters",
     runnerUpWomen: "Rajasthan Queens",
+    imageUrl: "https://i.postimg.cc/c4pLK2rj/618820825-17901586434202793-2529525522784587047-n.jpg",
     details: [
       "Over 1,200 active players participated across three age segments.",
       "Strict safety gear standards were deployed using special polymer compound sticks.",
@@ -45,6 +47,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     runnerUpMen: "Bhutan Royals",
     winnerWomen: "India (ASHFI Women Team)",
     runnerUpWomen: "Bhutan Dragons",
+    imageUrl: "https://i.postimg.cc/7PgkshhH/547912671-17887090557358657-4724207013965989442-n.jpg",
     details: [
       "A 4-day tournament held at the Phuentsholing Sports Arena.",
       "Attended by delegates from the Bhutan Olympic Committee.",
@@ -62,6 +65,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     runnerUpMen: "Nepal Falcons",
     winnerWomen: "India Women Team",
     runnerUpWomen: "Nepal Himalayan Queens",
+    imageUrl: "https://i.postimg.cc/WzJfN2zS/Screenshot-2026-07-15-000944.png",
     details: [
       "Vishesh Kumar won the Golden Stick award with 11 goals in the tournament.",
       "Jothan Rai (Nepal) was recognized as the Best Goalkeeper of the tournament.",
@@ -79,6 +83,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     runnerUpMen: "Punjab Lions",
     winnerWomen: "Delhi Fighters",
     runnerUpWomen: "Royal Challenger Rajasthan",
+    imageUrl: "https://i.postimg.cc/GtpSZFnd/Screenshot-2026-07-14-234819.png",
     details: [
       "First national championship to utilize digital scoreboards and live replay streams.",
       "Jaipur Raiders registered an undefeated run to claim the men's senior title.",
@@ -96,6 +101,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     runnerUpMen: "Nepal Selection",
     winnerWomen: "India Women Selection",
     runnerUpWomen: "Nepal Queens",
+    imageUrl: "https://i.postimg.cc/j2ztydwW/656682566-17911828710358657-8477715699531415622-n.jpg",
     details: [
       "A milestone in South Asian safe sports culture.",
       "Played on indoor wooden courts showcasing excellent speed, endurance, and strategy.",
@@ -113,6 +119,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     runnerUpMen: "Maharashtra Dragons",
     winnerWomen: "Rajasthan Pink Stars",
     runnerUpWomen: "Delhi Defenders",
+    imageUrl: "https://i.postimg.cc/fbjVLYXY/Screenshot-2026-07-15-113941.png",
     details: [
       "Attracted 5,000+ primary school physical training instructors to observe.",
       "Standardized referee signals and green/yellow/red card timing mechanics."
@@ -129,6 +136,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     runnerUpMen: "Haryana Bulls",
     winnerWomen: "Delhi Divas",
     runnerUpWomen: "Rajasthan Queens",
+    imageUrl: "https://i.postimg.cc/mDVTYyS9/Screenshot-2026-07-15-000420.png",
     details: [
       "Organized under the patronage of Mr. Ramesh Singh (Founder).",
       "Successfully demonstrated 6v6 field strategy, non-contact sportsmanship, and D-area goalie boundaries."
@@ -256,72 +264,97 @@ export default function Championships() {
                       className="border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-950/20"
                     >
                       <div className="p-6 sm:p-8 space-y-6">
-                        {/* Description */}
-                        <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-semibold">
-                          {event.description}
-                        </p>
+                        {/* Responsive grid for description, stats, and image */}
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                          <div className="md:col-span-7 space-y-6">
+                            {/* Description */}
+                            <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-semibold">
+                              {event.description}
+                            </p>
 
-                        {/* Gold & Silver Podium results */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {/* Men's Segment */}
-                          <div className="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-150 dark:border-slate-800/80 space-y-3">
-                            <span className="text-[10px] font-mono font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block border-b border-slate-50 dark:border-slate-800/60 pb-1.5">
-                              Men's Championship Results
-                            </span>
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between text-xs font-bold">
-                                <span className="flex items-center gap-1.5 text-amber-600">
-                                  <Award className="w-4 h-4 fill-amber-500 text-amber-500" />
-                                  <span>Gold (1st):</span>
+                            {/* Gold & Silver Podium results */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              {/* Men's Segment */}
+                              <div className="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-150 dark:border-slate-800/85 space-y-3 shadow-xs">
+                                <span className="text-[10px] font-mono font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block border-b border-slate-50 dark:border-slate-800/60 pb-1.5">
+                                  Men's Results
                                 </span>
-                                <span className="text-slate-800 dark:text-slate-100">{event.winnerMen}</span>
+                                <div className="space-y-2">
+                                  <div className="flex items-center justify-between text-xs font-bold">
+                                    <span className="flex items-center gap-1.5 text-amber-600">
+                                      <Award className="w-4 h-4 fill-amber-500 text-amber-500 animate-pulse" />
+                                      <span>Gold:</span>
+                                    </span>
+                                    <span className="text-slate-800 dark:text-slate-100">{event.winnerMen}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between text-xs font-bold">
+                                    <span className="flex items-center gap-1.5 text-slate-400">
+                                      <Award className="w-4 h-4 fill-slate-300 text-slate-300" />
+                                      <span>Silver:</span>
+                                    </span>
+                                    <span className="text-slate-800 dark:text-slate-100">{event.runnerUpMen}</span>
+                                  </div>
+                                </div>
                               </div>
-                              <div className="flex items-center justify-between text-xs font-bold">
-                                <span className="flex items-center gap-1.5 text-slate-400">
-                                  <Award className="w-4 h-4 fill-slate-300 text-slate-300" />
-                                  <span>Silver (2nd):</span>
+
+                              {/* Women's Segment */}
+                              <div className="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-150 dark:border-slate-800/85 space-y-3 shadow-xs">
+                                <span className="text-[10px] font-mono font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block border-b border-slate-50 dark:border-slate-800/60 pb-1.5">
+                                  Women's Results
                                 </span>
-                                <span className="text-slate-800 dark:text-slate-100">{event.runnerUpMen}</span>
+                                <div className="space-y-2">
+                                  <div className="flex items-center justify-between text-xs font-bold">
+                                    <span className="flex items-center gap-1.5 text-amber-600">
+                                      <Award className="w-4 h-4 fill-amber-500 text-amber-500 animate-pulse" />
+                                      <span>Gold:</span>
+                                    </span>
+                                    <span className="text-slate-800 dark:text-slate-100">{event.winnerWomen}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between text-xs font-bold">
+                                    <span className="flex items-center gap-1.5 text-slate-400">
+                                      <Award className="w-4 h-4 fill-slate-300 text-slate-300" />
+                                      <span>Silver:</span>
+                                    </span>
+                                    <span className="text-slate-800 dark:text-slate-100">{event.runnerUpWomen}</span>
+                                  </div>
+                                </div>
                               </div>
+                            </div>
+
+                            {/* Special Details / Bullet notes */}
+                            <div className="space-y-2.5">
+                              <span className="text-[10px] font-mono font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block">
+                                Key Event Highlights & Notes
+                              </span>
+                              <ul className="space-y-1.5 pl-4 list-disc">
+                                {event.details.map((detail, dIdx) => (
+                                  <li key={dIdx} className="text-xs text-slate-500 dark:text-slate-400 font-bold leading-relaxed">
+                                    {detail}
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
                           </div>
 
-                          {/* Women's Segment */}
-                          <div className="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-150 dark:border-slate-800/80 space-y-3">
-                            <span className="text-[10px] font-mono font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block border-b border-slate-50 dark:border-slate-800/60 pb-1.5">
-                              Women's Championship Results
+                          {/* Event Image Column */}
+                          <div className="md:col-span-5 space-y-3">
+                            <span className="text-[10px] font-mono font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block">
+                              Tournament Photo / Ceremony
                             </span>
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between text-xs font-bold">
-                                <span className="flex items-center gap-1.5 text-amber-600">
-                                  <Award className="w-4 h-4 fill-amber-500 text-amber-500" />
-                                  <span>Gold (1st):</span>
+                            <div className="relative rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-800 shadow-lg group max-h-[250px] aspect-video bg-slate-100 dark:bg-slate-950 flex items-center justify-center">
+                              <img
+                                src={event.imageUrl}
+                                alt={event.title}
+                                referrerPolicy="no-referrer"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <span className="text-[10px] font-mono font-black text-white uppercase tracking-widest bg-pink-500 px-2.5 py-1 rounded shadow-lg">
+                                  {event.location}
                                 </span>
-                                <span className="text-slate-800 dark:text-slate-100">{event.winnerWomen}</span>
-                              </div>
-                              <div className="flex items-center justify-between text-xs font-bold">
-                                <span className="flex items-center gap-1.5 text-slate-400">
-                                  <Award className="w-4 h-4 fill-slate-300 text-slate-300" />
-                                  <span>Silver (2nd):</span>
-                                </span>
-                                <span className="text-slate-800 dark:text-slate-100">{event.runnerUpWomen}</span>
                               </div>
                             </div>
                           </div>
-                        </div>
-
-                        {/* Special Details / Bullet notes */}
-                        <div className="space-y-2.5">
-                          <span className="text-[10px] font-mono font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block">
-                            Key Event Highlights & Notes
-                          </span>
-                          <ul className="space-y-1.5 pl-4 list-disc">
-                            {event.details.map((detail, dIdx) => (
-                              <li key={dIdx} className="text-xs text-slate-500 dark:text-slate-400 font-bold leading-relaxed">
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
                         </div>
                       </div>
                     </motion.div>
