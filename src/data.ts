@@ -485,6 +485,45 @@ export const STANDINGS_WOMEN: StandingsRow[] = [
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    id: 'news-ashutosh-president',
+    title: 'आशुतोष बने इंडियन सॉफ्ट हॉकी फेडरेशन के राष्ट्रीय अध्यक्ष',
+    excerpt: 'राजस्थान के आशुतोष को सर्वसम्मति से इंडियन सॉफ्ट हॉकी फेडरेशन (ASHFI) का नया राष्ट्रीय अध्यक्ष चुना गया है।',
+    content: `राजस्थान के आशुतोष को सर्वसम्मति से इंडियन सॉफ्ट हॉकी फेडरेशन (ASHFI) का नया राष्ट्रीय अध्यक्ष चुना गया है। उनकी इस नियुक्ति से देश भर के सॉफ्ट हॉकी प्रेमियों और खिलाड़ियों में उत्साह की लहर है।
+
+नवनियुक्त अध्यक्ष आशुतोष ने कहा कि उनका मुख्य उद्देश्य देश के कोने-कोने में सॉफ्ट हॉकी को बढ़ावा देना, प्राथमिक और उच्च विद्यालयों में टूर्नामेंट आयोजित करना और खिलाड़ियों को विश्व स्तरीय सुविधाएं प्रदान करना है। उन्होंने कहा कि फेडरेशन आगामी समय में कई बड़े राज्य और राष्ट्रीय स्तर के चैंपियनशिप आयोजित करने जा रहा है।`,
+    date: 'July 15, 2026',
+    category: 'Federation News',
+    imageUrl: 'https://i.postimg.cc/tJN0ntps/Screenshot-2026-07-15-135443.png',
+    readTime: '2 min read',
+    externalUrl: 'https://www.etvbharat.com/hi/!state/ashutosh-became-the-president-of-indian-soft-hockey-federation-rajasthan-news-rjs25012101119'
+  },
+  {
+    id: 'news-excellence-award',
+    title: 'Excellence Award 2025: जयपुर में गरिमामयी एक्सीलेंस अवार्ड समारोह संपन्न',
+    excerpt: 'जयपुर में आयोजित भव्य एक्सीलेंस अवार्ड 2025 समारोह में खेल और समाज सेवा के क्षेत्र में उत्कृष्ट योगदान देने वाले विभूतियों को सम्मानित किया गया।',
+    content: `जयपुर में आयोजित गरिमामयी एक्सीलेंस अवार्ड 2025 समारोह में खेल, संस्कृति और समाज सेवा को बढ़ावा देने वाले प्रमुख व्यक्तित्वों को सम्मानित किया गया। 
+
+इस भव्य कार्यक्रम में सॉफ्ट हॉकी के क्षेत्र में अभूतपूर्व योगदान देने वाले पदाधिकारियों और असाधारण एथलीटों को विशिष्ट एक्सीलेंस अवार्ड से नवाजा गया। इस पुरस्कार से न केवल खिलाड़ियों का मनोबल बढ़ा है बल्कि सॉफ्ट हॉकी के विकास को एक नई दिशा मिली है। समारोह में खेल जगत के कई दिग्गज और गणमान्य अतिथि उपस्थित रहे।`,
+    date: 'July 15, 2026',
+    category: 'Awards & Honors',
+    imageUrl: 'https://i.postimg.cc/vTfYqVyS/Screenshot-2026-07-15-135242.png',
+    readTime: '3 min read',
+    externalUrl: 'https://news21national.com/excellence-award-2025-%e0%a4%9c%e0%a4%af%e0%a5%81%e0%a4%b0-%e0%a4%ae%e0%a5%87%e0%a4%82-%e0%a4%8f%e0%a5%8d%e0%a4%b8%e0%a5%80%e0%a4%b2%e0%a5%87%e0%a4%82%e0%a4%b8-%e0%a4%85%e0%a4%b5/'
+  },
+  {
+    id: 'news-official-ishl-launch',
+    title: 'Amateur Soft Hockey Federation (ASHFI) Official Press Release',
+    excerpt: 'Official updates from the Indian Soft Hockey Federation regarding state tournaments and league structures.',
+    content: `The Amateur Soft Hockey Federation of India (ASHFI) has officially announced the launch of new state-wide championships and structured pathways for young athletes. 
+
+With over 31+ states actively participating, the federation aims to foster a strong foundation of sportsmanship, speed, and strategic coordination. The upcoming league schedules, player scouting guidelines, and team roster requirements have been compiled in the official database. Explore the full range of match logs and standings dynamically updated.`,
+    date: 'July 15, 2026',
+    category: 'Federation Update',
+    imageUrl: 'https://i.postimg.cc/wjSqD2Dp/Screenshot-2026-07-15-132508.png',
+    readTime: '2 min read',
+    externalUrl: 'https://news21national.com/excellence-award-2025-%e0%a4%9c%e0%a4%af%e0%a5%81%e0%a4%b0-%e0%a4%ae%e0%a5%87%e0%a4%82-%e0%a4%8f%e0%a5%8d%e0%a4%b8%e0%a5%80%e0%a4%b2%e0%a5%87%e0%a4%82%e0%a4%b8-%e0%a4%85%e0%a4%b5/'
+  },
+  {
     id: 'news-jaipur-soft-hockey',
     title: 'जयपुर बना सॉफ्ट हॉकी का नया गढ़: राष्ट्रीय स्वर्ण पदक और अंतरराष्ट्रीय स्तर की तैयारियों का प्रमुख केंद्र',
     excerpt: 'जयपुर में आयोजित सॉफ्ट हॉकी टूर्नामेंट्स और विशेष प्रशिक्षण शिविरों ने खेल जगत में हलचल मचा दी है। जानिए सवाई मानसिंह स्टेडियम और द्रोणाचार्य स्पोर्ट्स एकेडमी की स्वर्णिम गाथा।',

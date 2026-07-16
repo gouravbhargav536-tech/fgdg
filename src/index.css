@@ -19,6 +19,7 @@
   
   --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
   --animate-pulse-slow: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 8s linear infinite;
 }
 
 @keyframes fade-in-up {
@@ -67,6 +68,63 @@ body {
   background-color: #F8FAFC;
   color: #0F172A;
   @apply antialiased selection:bg-accent selection:text-white transition-colors duration-300;
+}
+
+/* Premium Animated Day Mode styles (vivid pink, blue, and white palette) */
+body.day-mode {
+  background: linear-gradient(135deg, #FFF0F5 0%, #EEF2FF 35%, #FFFFFF 65%, #FCE7F3 100%);
+  background-size: 300% 300%;
+  animation: dayModeGradientBg 12s ease-in-out infinite;
+  color: #0B1F3A; /* Deep Navy Blue for high contrast readability */
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes dayModeGradientBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body.day-mode h1,
+body.day-mode h2,
+body.day-mode h3 {
+  color: #1E3A8A !important; /* Beautiful Royal Blue */
+  text-shadow: 0 1px 2px rgba(219, 39, 119, 0.08); /* Minimal soft pink drop shadow for visual glow */
+}
+
+body.day-mode .text-primary {
+  color: #1D4ED8 !important; /* Premium Blue */
+}
+
+body.day-mode .text-pink-600 {
+  color: #DB2777 !important; /* Beautiful hot pink accent */
+}
+
+body.day-mode .bg-primary {
+  background-color: #1D4ED8 !important; /* Royal Blue */
+}
+
+/* Day Mode side-shadow animated effect (pulsing pink, blue, and white side glow) */
+.side-shadow-animated {
+  animation: side-shadow-glow 6s ease-in-out infinite;
+}
+
+@keyframes side-shadow-glow {
+  0% {
+    box-shadow: -15px 0 35px -12px rgba(219, 39, 119, 0.35), 15px 0 35px -12px rgba(29, 78, 216, 0.35);
+  }
+  50% {
+    box-shadow: -22px 0 45px -8px rgba(29, 78, 216, 0.45), 22px 0 45px -8px rgba(219, 39, 119, 0.45);
+  }
+  100% {
+    box-shadow: -15px 0 35px -12px rgba(219, 39, 119, 0.35), 15px 0 35px -12px rgba(29, 78, 216, 0.35);
+  }
 }
 
 body.dark {

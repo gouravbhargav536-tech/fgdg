@@ -61,6 +61,48 @@ const GALLERY_DATA: GalleryItem[] = [
     category: "Schools",
     url: "https://i.postimg.cc/WzJfN2zS/Screenshot-2026-07-15-000944.png",
     description: "Interactive session establishing state-wide primary and high school tournaments across over 31+ states."
+  },
+  {
+    id: 'g-user-8',
+    title: "National Championship Action",
+    category: "Matches",
+    url: "https://i.postimg.cc/fbjVLYXY/Screenshot-2026-07-15-113941.png",
+    description: "Intense gameplay during the National Soft Hockey Championship."
+  },
+  {
+    id: 'g-user-9',
+    title: "Tournament Highlight",
+    category: "Matches",
+    url: "https://i.postimg.cc/ZKMptPFc/Screenshot-2026-07-15-114122.png",
+    description: "Action shot from the tournament."
+  },
+  {
+    id: 'g-user-10',
+    title: "Championship Moments",
+    category: "Matches",
+    url: "https://i.postimg.cc/nVTqTfX7/Screenshot-2026-07-15-114202.png",
+    description: "Memorable moments from the championship."
+  },
+  {
+    id: 'g-user-11',
+    title: "Training Session",
+    category: "Camps",
+    url: "https://i.postimg.cc/RVy6bS4b/Screenshot-2026-07-15-114036.png",
+    description: "Athletes during an intense training session."
+  },
+  {
+    id: 'g-user-12',
+    title: "Camp Clinic",
+    category: "Camps",
+    url: "https://i.postimg.cc/8PjfHJQG/Screenshot-2026-07-15-114045.png",
+    description: "Coaches and players during a camp clinic."
+  },
+  {
+    id: 'g-user-13',
+    title: "Match Day",
+    category: "Matches",
+    url: "https://i.postimg.cc/jjz77pVS/Screenshot-2026-07-15-114059.png",
+    description: "Preparation on match day."
   }
 ];
 
@@ -144,11 +186,86 @@ export default function Gallery() {
         <div id="media-coverage" className="space-y-12">
             <h2 className="font-display text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase text-center">Media Coverage</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Media coverage items placeholders */}
+                {[
+                  {
+                    id: 'm-1',
+                    title: "Dainik Bhaskar: Jaipur Shines in Soft Hockey National Cup",
+                    date: "July 12, 2026",
+                    url: "https://i.postimg.cc/GtpSZFnd/Screenshot-2026-07-14-234819.png",
+                    source: "Dainik Bhaskar"
+                  },
+                  {
+                    id: 'm-2',
+                    title: "Rajasthan Patrika: Soft Hockey to be Integrated in School Syllabi",
+                    date: "July 14, 2026",
+                    url: "https://i.postimg.cc/WzJfN2zS/Screenshot-2026-07-15-000944.png",
+                    source: "Rajasthan Patrika"
+                  },
+                  {
+                    id: 'm-3',
+                    title: "Times of India: South Asian Bilateral Soft Hockey Friendship Cup Commences",
+                    date: "July 15, 2026",
+                    url: "https://i.postimg.cc/YqrbDfzM/Screenshot-2026-07-15-001348.png",
+                    source: "Times of India"
+                  }
+                ].map(item => (
+                  <div key={item.id} className="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div className="p-5 space-y-3">
+                      <span className="text-[10px] font-mono font-black text-primary dark:text-accent uppercase tracking-widest bg-primary/10 dark:bg-accent/10 px-2.5 py-1 rounded-full inline-block">
+                        {item.source}
+                      </span>
+                      <h4 className="font-display font-black text-sm text-slate-900 dark:text-white uppercase leading-snug">
+                        {item.title}
+                      </h4>
+                      <p className="text-[10px] font-mono font-bold text-slate-400">Published: {item.date}</p>
+                    </div>
+                    <div className="h-40 bg-slate-100 dark:bg-slate-950 overflow-hidden relative group">
+                      <img src={item.url} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-black/10" />
+                    </div>
+                  </div>
+                ))}
             </div>
         </div>
 
         <ImageBanner url="https://i.postimg.cc/4xMPdCCD/Screenshot-2026-07-15-001337.png" caption="In the Press" />
+
+        {/* Section 4: Video and News */}
+        <div id="video-news" className="space-y-12">
+            <h2 className="font-display text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase text-center">Video and News</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    id: 'v-1',
+                    title: "Soft Hockey Championship Reel",
+                    url: "https://www.instagram.com/softhockey.official_/reel/DUXcvVGAVOw/"
+                  },
+                  {
+                    id: 'v-2',
+                    title: "Championship Highlights",
+                    url: "https://www.instagram.com/softhockey.official_/reel/DUpiD82gWM8/"
+                  },
+                  {
+                    id: 'v-3',
+                    title: "Athlete Feature",
+                    url: "https://www.instagram.com/rushisarolkar2715/reel/DUk8XN9jJ4X/"
+                  }
+                ].map(item => (
+                  <div key={item.id} className="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <div className="p-5">
+                      <h4 className="font-display font-black text-sm text-slate-900 dark:text-white uppercase leading-snug">
+                        {item.title}
+                      </h4>
+                    </div>
+                    <div className="p-5 pt-0">
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-primary dark:text-accent font-black text-xs uppercase tracking-widest hover:underline">
+                        Watch Reel &rarr;
+                      </a>
+                    </div>
+                  </div>
+                ))}
+            </div>
+        </div>
 
         {/* Section 3: Our Sponsors */}
         <div id="our-sponsors" className="space-y-12">

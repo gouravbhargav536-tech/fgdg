@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Users, Activity, BarChart2, Video, Mail, Home, BookOpen, Award, Camera, Heart, ShieldAlert, Trophy } from 'lucide-react';
+import { Menu, X, Sun, Moon, Users, Activity, BarChart2, Video, Mail, Home, BookOpen, Award, Camera, Heart, ShieldAlert, Trophy, Globe, Newspaper } from 'lucide-react';
 
 interface HeaderProps {
   darkMode: boolean;
@@ -43,6 +43,8 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
     { label: 'Championships', id: 'championships', icon: <Trophy className="w-4 h-4" /> },
     { label: 'ISHL (League)', id: 'ishl', icon: <Award className="w-4 h-4" /> },
     { label: 'Gallery', id: 'gallery', icon: <Camera className="w-4 h-4" /> },
+    { label: 'News', id: 'news', icon: <Newspaper className="w-4 h-4" /> },
+    { label: 'Official Links', id: 'official-links', icon: <Globe className="w-4 h-4" /> },
     { label: 'Join/Donate', id: 'join-donate', icon: <Heart className="w-4 h-4" /> },
     { label: 'Contact', id: 'contact', icon: <Mail className="w-4 h-4" /> },
   ];
@@ -78,22 +80,8 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
               className="flex items-center gap-2.5 cursor-pointer group"
               onClick={() => handleLinkClick('home')}
             >
-              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-900 to-sky-600 text-white shadow-md transform group-hover:scale-[1.03] transition-transform duration-300">
-                {/* Custom Hockey Sticks and Ball Vector */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5.5 h-5.5 text-white"
-                >
-                  <path d="M5 21l14-14M17 3a2 2 0 112 2 2 2 0 01-2-2z" />
-                  <path d="M14 6l3 3" />
-                  <circle cx="9" cy="15" r="2.5" fill="currentColor" className="text-pink-400" />
-                </svg>
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl text-white shadow-md transform group-hover:scale-[1.03] transition-transform duration-300 overflow-hidden">
+                <img src="https://i.postimg.cc/fySnWtR1/Screenshot-2026-07-15-142120.png" alt="ASHFI Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <span className="font-display font-black text-xl tracking-tight text-blue-900 dark:text-white block leading-none">
@@ -125,40 +113,24 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
               })}
             </nav>
 
-            {/* Controls (Theme Toggle & Division Toggle & Drawer Trigger) */}
+            {/* Controls (Theme Toggle & Drawer Trigger) */}
             <div className="flex items-center gap-2.5">
               
-              {/* Division Selector */}
-              <div className="hidden sm:flex bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 p-1 rounded-full font-mono text-[10px] select-none shadow-sm">
-                <button
-                  onClick={() => setDivision('Men')}
-                  className={`px-3.5 py-1 rounded-full font-black uppercase transition-all cursor-pointer ${
-                    division === 'Men'
-                      ? 'bg-blue-900 text-white shadow-sm'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-blue-900 dark:hover:text-white'
-                  }`}
-                >
-                  Men
-                </button>
-                <button
-                  onClick={() => setDivision('Women')}
-                  className={`px-3.5 py-1 rounded-full font-black uppercase transition-all cursor-pointer ${
-                    division === 'Women'
-                      ? 'bg-pink-600 text-white shadow-sm'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-pink-600'
-                  }`}
-                >
-                  Women
-                </button>
-              </div>
-
               {/* Theme Mode toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-850 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all cursor-pointer shadow-sm"
+                className={`p-2.5 rounded-full transition-all duration-300 cursor-pointer shadow-md border ${
+                  !darkMode 
+                    ? 'bg-gradient-to-tr from-pink-100 to-blue-100 border-pink-300 text-pink-600 hover:scale-105 shadow-pink-200/50' 
+                    : 'bg-slate-950 text-slate-300 border-slate-850 hover:bg-slate-800 border-slate-800'
+                }`}
                 aria-label="Toggle Theme Mode"
               >
-                {darkMode ? <Sun className="w-4 h-4 text-yellow-400" /> : <Moon className="w-4 h-4 text-slate-800" />}
+                {darkMode ? (
+                  <Sun className="w-4 h-4 text-yellow-400 animate-pulse" />
+                ) : (
+                  <Moon className="w-4 h-4 text-blue-900" />
+                )}
               </button>
 
               {/* Hamburger Button for Mobile/Tablet */}
@@ -213,35 +185,6 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
               </button>
             </div>
 
-            {/* Division Selector inside Drawer for Mobile Screen */}
-            <div className="sm:hidden space-y-1.5">
-              <span className="text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest block px-1">
-                Active Tournament Division
-              </span>
-              <div className="grid grid-cols-2 bg-slate-50 dark:bg-slate-950 border border-slate-250 dark:border-slate-850 p-1 rounded-full font-mono text-xs select-none text-center">
-                <button
-                  onClick={() => { setDivision('Men'); }}
-                  className={`py-1.5 rounded-full font-black uppercase transition-all cursor-pointer ${
-                    division === 'Men'
-                      ? 'bg-blue-900 text-white shadow-sm'
-                      : 'text-slate-600 dark:text-slate-400'
-                  }`}
-                >
-                  Men
-                </button>
-                <button
-                  onClick={() => { setDivision('Women'); }}
-                  className={`py-1.5 rounded-full font-black uppercase transition-all cursor-pointer ${
-                    division === 'Women'
-                      ? 'bg-pink-600 text-white shadow-sm'
-                      : 'text-slate-600 dark:text-slate-400'
-                  }`}
-                >
-                  Women
-                </button>
-              </div>
-            </div>
-
             {/* Drawer menu list */}
             <div className="space-y-1">
               <span className="text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest block mb-2 px-1">
@@ -277,17 +220,21 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
             <div className="grid grid-cols-2 gap-1.5 p-1 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-150 dark:border-slate-850">
               <button
                 onClick={() => setDarkMode(false)}
-                className={`py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                  !darkMode ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500'
+                className={`py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
+                  !darkMode 
+                    ? 'bg-gradient-to-r from-pink-500 to-blue-600 text-white shadow-md transform scale-[1.03]' 
+                    : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
                 }`}
               >
-                <Sun className="w-3.5 h-3.5 text-yellow-500" />
+                <Sun className={`w-3.5 h-3.5 ${!darkMode ? 'text-white animate-spin-slow' : 'text-yellow-500'}`} />
                 <span>Day</span>
               </button>
               <button
                 onClick={() => setDarkMode(true)}
-                className={`py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                  darkMode ? 'bg-slate-800 text-white shadow-xs' : 'text-slate-500'
+                className={`py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
+                  darkMode 
+                    ? 'bg-slate-800 text-white shadow-md' 
+                    : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
                 <Moon className="w-3.5 h-3.5 text-blue-400" />

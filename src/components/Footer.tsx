@@ -31,48 +31,6 @@ export default function Footer() {
       <section className="w-full bg-white text-slate-800 border-t border-slate-100 py-16 px-4 sm:px-6 lg:px-8 text-center select-none">
         <div className="max-w-4xl mx-auto">
           
-          {/* Title Sponsor block */}
-          <div className="space-y-3">
-            <span className="text-[10px] font-mono font-black tracking-widest text-slate-400 uppercase block">
-              Title Sponsor
-            </span>
-            
-            <a 
-              href="https://www.heromotocorp.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="mx-auto max-w-sm p-6 bg-gradient-to-br from-blue-900/5 via-white to-amber-500/5 hover:from-blue-900/10 hover:to-amber-500/10 border-2 border-dashed border-slate-200 hover:border-blue-900 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all duration-300 shadow-sm relative group overflow-hidden block"
-            >
-              {/* Corner decorative lights */}
-              <div className="absolute top-2.5 left-2.5 w-1.5 h-1.5 bg-blue-900/30 rounded-full group-hover:bg-blue-900 transition-all" />
-              <div className="absolute bottom-2.5 right-2.5 w-1.5 h-1.5 bg-amber-500/30 rounded-full group-hover:bg-amber-500 transition-all" />
-              
-              {/* Real high-visibility sponsor badge vector */}
-              <div className="w-44 h-16 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-slate-100 shadow-inner p-2 group-hover:scale-105 transition-all duration-300">
-                <svg viewBox="0 0 200 60" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g transform="translate(15, 2)">
-                    {/* Stylized Red Word "Hero" in slanted font */}
-                    <text x="5" y="32" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontStyle="italic" fontSize="38" fill="#E63025" letterSpacing="-1.5">Hero</text>
-                    {/* "MOTOCORP" under it */}
-                    <text x="6" y="46" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="10.5" fill="#1E293B" letterSpacing="4">MOTOCORP</text>
-                  </g>
-                </svg>
-              </div>
-
-              <div className="relative z-10 flex flex-col items-center">
-                <span className="text-slate-800 font-black uppercase tracking-wider text-sm flex items-center gap-1.5 group-hover:text-blue-900 transition-colors">
-                  Hero MotoCorp <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-900 transition-colors" />
-                </span>
-                <span className="text-[10px] font-mono font-bold text-slate-400 group-hover:text-blue-900/70 transition-colors uppercase tracking-widest mt-0.5">
-                  Official Title Sponsor Portal
-                </span>
-              </div>
-            </a>
-          </div>
-
-          {/* Thin horizontal divider line below Title Sponsor */}
-          <div className="w-full max-w-2xl mx-auto my-10 border-t border-slate-100" />
-
           {/* Partner categories in a 2-column grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left">
             
@@ -147,73 +105,6 @@ export default function Footer() {
                   </span>
                   <span className="text-[9px] font-mono font-bold text-slate-400 group-hover:text-blue-950/70 transition-colors uppercase tracking-wider mt-0.5">
                     Official Streaming Partner
-                  </span>
-                </div>
-              </a>
-            </div>
-
-            {/* Thin row divider line */}
-            <div className="col-span-1 md:col-span-2 border-t border-slate-100 my-1" />
-
-            {/* Category 3: Official Hydration Partner */}
-            <div className="space-y-2.5">
-              <span className="text-[10px] font-mono font-black tracking-widest text-slate-400 uppercase block">
-                Official Hydration Partner
-              </span>
-              <a 
-                href="https://www.bisleri.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-4 bg-slate-50/85 hover:bg-emerald-50/30 border border-slate-200/60 hover:border-emerald-300 rounded-xl flex items-center gap-4 transition-all duration-300 relative overflow-hidden group block"
-              >
-                {/* Logo Image */}
-                <div className="w-16 h-12 bg-white rounded-lg overflow-hidden flex items-center justify-center border border-slate-200 shrink-0 group-hover:scale-105 transition-all duration-300 shadow-sm p-1">
-                  <img 
-                    src="https://i.postimg.cc/T3LMJR4G/Screenshot-2026-07-14-132359.png" 
-                    alt="Bisleri"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                
-                <div className="relative z-10 flex flex-col">
-                  <span className="text-slate-800 font-extrabold uppercase text-xs tracking-wider flex items-center gap-1 group-hover:text-emerald-600 transition-colors">
-                    Bisleri <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-emerald-500 transition-colors" />
-                  </span>
-                  <span className="text-[9px] font-mono font-bold text-slate-400 group-hover:text-emerald-600/70 transition-colors uppercase tracking-wider mt-0.5">
-                    Official Hydration Partner
-                  </span>
-                </div>
-              </a>
-            </div>
-
-            {/* Category 4: Medical Partner */}
-            <div className="space-y-2.5">
-              <span className="text-[10px] font-mono font-black tracking-widest text-slate-400 uppercase block">
-                Medical Partner
-              </span>
-              <a 
-                href="https://www.apollohospitals.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-4 bg-slate-50/85 hover:bg-teal-50/30 border border-slate-200/60 hover:border-teal-300 rounded-xl flex items-center gap-4 transition-all duration-300 relative overflow-hidden group block"
-              >
-                {/* Logo Image */}
-                <div className="w-16 h-12 bg-white rounded-lg overflow-hidden flex items-center justify-center border border-slate-100 shrink-0 group-hover:scale-105 transition-all duration-300 p-1">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Apollo_Hospitals_Logo.svg/512px-Apollo_Hospitals_Logo.svg.png" 
-                    alt="Apollo Hospitals Logo"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                
-                <div className="relative z-10 flex flex-col">
-                  <span className="text-slate-800 font-extrabold uppercase text-xs tracking-wider flex items-center gap-1 group-hover:text-teal-600 transition-colors">
-                    Apollo Hospitals <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-teal-500 transition-colors" />
-                  </span>
-                  <span className="text-[9px] font-mono font-bold text-slate-400 group-hover:text-teal-600/70 transition-colors uppercase tracking-wider mt-0.5">
-                    Official Medical Partner
                   </span>
                 </div>
               </a>

@@ -29,7 +29,7 @@ export default function Founders() {
           <div className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 rounded-3xl overflow-hidden shadow-lg flex flex-col md:flex-row">
             <div className="md:w-1/2 relative h-80 md:h-auto min-h-[380px] bg-slate-950">
               <img 
-                src="https://i.postimg.cc/c4pLK2rj/618820825-17901586434202793-2529525522784587047-n.jpg" 
+                src="https://i.postimg.cc/L4b94Jc6/Screenshot-2026-07-15-105359.png" 
                 alt="Mr. Ramesh Singh - Founder of Indian Soft Hockey"
                 className="w-full h-full object-cover object-top"
                 referrerPolicy="no-referrer"
@@ -73,7 +73,7 @@ export default function Founders() {
           <div className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 rounded-3xl overflow-hidden shadow-lg flex flex-col md:flex-row">
             <div className="md:w-1/2 relative h-80 md:h-auto min-h-[380px] bg-slate-950">
               <img 
-                src="https://i.postimg.cc/pXwHZR0Y/3722cb25-b42d-4304-9ca7-02dd271b1595.jpg" 
+                src="https://i.postimg.cc/2yp0TFqd/Screenshot-2026-07-15-104537.png" 
                 alt="Dr. Ashutosh Pant - National President"
                 className="w-full h-full object-cover object-top"
                 referrerPolicy="no-referrer"
@@ -130,7 +130,7 @@ export default function Founders() {
             <div className="flex items-center gap-4 pt-4 border-t border-slate-800/80">
               <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-950 shrink-0">
                 <img 
-                  src="https://i.postimg.cc/pXwHZR0Y/3722cb25-b42d-4304-9ca7-02dd271b1595.jpg" 
+                  src="https://i.postimg.cc/2yp0TFqd/Screenshot-2026-07-15-104537.png" 
                   alt="Dr. Ashutosh Pant" 
                   className="w-full h-full object-cover object-top" 
                 />

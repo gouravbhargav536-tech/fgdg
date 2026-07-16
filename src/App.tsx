@@ -25,6 +25,7 @@ import ImageBanner from './components/ImageBanner';
 import Championships from './components/Championships';
 import ISHL from './components/ISHL';
 import Gallery from './components/Gallery';
+import OfficialLinks from './components/OfficialLinks';
 import JoinDonate from './components/JoinDonate';
 import ContactSection from './components/ContactSection';
 
@@ -49,9 +50,11 @@ export default function App() {
     if (savedTheme === 'true') {
       setDarkMode(true);
       document.body.classList.add('dark');
+      document.body.classList.remove('day-mode');
     } else {
       setDarkMode(false);
       document.body.classList.remove('dark');
+      document.body.classList.add('day-mode');
     }
   }, []);
 
@@ -59,9 +62,11 @@ export default function App() {
     setDarkMode(val);
     if (val) {
       document.body.classList.add('dark');
+      document.body.classList.remove('day-mode');
       localStorage.setItem('hil_dark_mode', 'true');
     } else {
       document.body.classList.remove('dark');
+      document.body.classList.add('day-mode');
       localStorage.setItem('hil_dark_mode', 'false');
     }
   };
@@ -86,47 +91,50 @@ export default function App() {
 
       {/* Main content layouts */}
       <main className="flex-1 mt-[80px]">
-        {activeSection === 'home' && (
-          <>
-            <HeroCarousel />
-            <Hero setActiveSection={handleSectionChange} />
-            <ImageBanner url="https://i.postimg.cc/VLvXb7W3/Screenshot-2026-07-14-235936.png" caption="Soft Hockey in Action" />
-            <About />
-            <ImageBanner url="https://i.postimg.cc/QMT2NkPr/Screenshot-2026-07-15-000017.png" caption="Field Play" />
-            <OfficialJerseyShowcase />
-            <SoftHockeyGuide />
-            <ImageBanner url="https://i.postimg.cc/HxGCbP5k/Screenshot-2026-07-14-235958.png" caption="Champions on the Ground" />
-          </>
-        )}
-        
-        {activeSection === 'about' && <About />}
-        
-        {activeSection === 'founders' && <Founders />}
-        
-        {activeSection === 'teams' && (
-          <Teams division={division} setDivision={handleSetDivision} />
-        )}
-        
-        {activeSection === 'championships' && <Championships />}
-        
-        {activeSection === 'ishl' && <ISHL />}
-        
-        {activeSection === 'gallery' && <Gallery />}
-        
-        {activeSection === 'join-donate' && <JoinDonate />}
-        
-        {activeSection === 'contact' && <ContactSection />}
+        <div className={`transition-all duration-500 ${!darkMode ? 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6 py-6 bg-white/75 backdrop-blur-md rounded-3xl side-shadow-animated border-x border-pink-200/30' : ''}`}>
+          {activeSection === 'home' && (
+            <>
+              <HeroCarousel />
+              <Hero setActiveSection={handleSectionChange} />
+              <ImageBanner url="https://i.postimg.cc/VLvXb7W3/Screenshot-2026-07-14-235936.png" caption="Soft Hockey in Action" />
+              <About />
+              <ImageBanner url="https://i.postimg.cc/QMT2NkPr/Screenshot-2026-07-15-000017.png" caption="Field Play" />
+              <OfficialJerseyShowcase />
+              <SoftHockeyGuide />
+              <ImageBanner url="https://i.postimg.cc/HxGCbP5k/Screenshot-2026-07-14-235958.png" caption="Champions on the Ground" />
+            </>
+          )}
+          
+          {activeSection === 'about' && <About />}
+          
+          {activeSection === 'founders' && <Founders />}
+          
+          {activeSection === 'teams' && (
+            <Teams division={division} setDivision={handleSetDivision} />
+          )}
+          
+          {activeSection === 'championships' && <Championships />}
+          
+          {activeSection === 'ishl' && <ISHL />}
+          
+          {activeSection === 'gallery' && <Gallery />}
 
-        {/* Keeping support segments like directory / matches / news fully integrated */}
-        {activeSection === 'official-hockey-directory' && <AIHockeyHub />}
-        {activeSection === 'news' && <News />}
-        {activeSection === 'soft-hockey-guide' && <SoftHockeyGuide />}
-        {activeSection === 'matches' && <Matches division={division} setDivision={handleSetDivision} />}
-        {activeSection === 'standings' && <Standings division={division} setDivision={handleSetDivision} />}
-        {activeSection === 'statistics' && <Statistics />}
-        {activeSection === 'videos' && <Videos />}
-        {activeSection === 'where-to-watch' && <WhereToWatch />}
-        
+          {activeSection === 'official-links' && <OfficialLinks />}
+          
+          {activeSection === 'join-donate' && <JoinDonate />}
+          
+          {activeSection === 'contact' && <ContactSection />}
+
+          {/* Keeping support segments like directory / matches / news fully integrated */}
+          {activeSection === 'official-hockey-directory' && <AIHockeyHub />}
+          {activeSection === 'news' && <News />}
+          {activeSection === 'soft-hockey-guide' && <SoftHockeyGuide />}
+          {activeSection === 'matches' && <Matches division={division} setDivision={handleSetDivision} />}
+          {activeSection === 'standings' && <Standings division={division} setDivision={handleSetDivision} />}
+          {activeSection === 'statistics' && <Statistics />}
+          {activeSection === 'videos' && <Videos />}
+          {activeSection === 'where-to-watch' && <WhereToWatch />}
+        </div>
       </main>
 
       {/* Sponsors Infinite Marquee (Animated Brand sponsors requested) */}

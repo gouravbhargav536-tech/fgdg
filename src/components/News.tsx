@@ -119,7 +119,13 @@ export default function News() {
                 {/* Read Prompt */}
                 <div className="pt-1 flex items-center justify-between text-[10px] font-black tracking-widest uppercase text-accent">
                   <span>Read Article</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  {article.externalUrl ? (
+                    <span className="flex items-center gap-1.5 px-2 py-1 bg-sky-950/40 hover:bg-sky-900/60 text-sky-400 text-[9px] font-bold border border-sky-400/20 rounded-md transition-colors">
+                      Official Link <ArrowUpRight className="w-3 h-3" />
+                    </span>
+                  ) : (
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  )}
                 </div>
               </div>
             </div>
@@ -221,6 +227,28 @@ export default function News() {
                   </p>
                 ))}
               </div>
+
+              {selectedArticle.externalUrl && (
+                <div className="p-5 bg-gradient-to-r from-blue-50/70 to-sky-50/70 dark:from-slate-950/40 dark:to-slate-900/40 border border-blue-100 dark:border-slate-800/80 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono font-black text-blue-900 dark:text-sky-400 uppercase tracking-widest block">
+                      OFFICIAL SOURCE PUBLICATION
+                    </span>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-bold">
+                      Read the original press release directly on the official news agency website.
+                    </p>
+                  </div>
+                  <a
+                    href={selectedArticle.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shrink-0 transition-all hover:scale-[1.02]"
+                  >
+                    <span>Read Official Link</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                </div>
+              )}
 
               {/* CTA Close Area */}
               <div className="pt-6 border-t border-slate-200 dark:border-slate-800 flex justify-end">

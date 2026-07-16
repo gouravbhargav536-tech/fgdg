@@ -15,6 +15,7 @@ import {
   ShieldAlert, 
   Activity 
 } from 'lucide-react';
+import UpcomingMatchReport from './UpcomingMatchReport';
 
 interface MatchesProps {
   division: 'Men' | 'Women';
@@ -537,6 +538,8 @@ export default function Matches({ division, setDivision }: MatchesProps) {
             );
           })}
         </div>
+        
+        <UpcomingMatchReport />
 
       </div>
     </section>

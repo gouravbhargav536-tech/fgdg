@@ -53,6 +53,7 @@ export interface NewsArticle {
   category: string;
   imageUrl: string;
   readTime: string;
+  externalUrl?: string;
 }
 
 export interface HighlightVideo {
