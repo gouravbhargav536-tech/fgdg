@@ -60,7 +60,7 @@ const GALLERY_DATA: GalleryItem[] = [
     title: "School Sports Affiliation Campaign",
     category: "Schools",
     url: "https://i.postimg.cc/WzJfN2zS/Screenshot-2026-07-15-000944.png",
-    description: "Interactive session establishing state-wide primary and high school tournaments across over 31+ states."
+    description: "Interactive session establishing state-wide primary and high school tournaments across 28 States & Union Territories."
   },
   {
     id: 'g-user-8',

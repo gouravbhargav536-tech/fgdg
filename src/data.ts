@@ -516,7 +516,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     excerpt: 'Official updates from the Indian Soft Hockey Federation regarding state tournaments and league structures.',
     content: `The Amateur Soft Hockey Federation of India (ASHFI) has officially announced the launch of new state-wide championships and structured pathways for young athletes. 
 
-With over 31+ states actively participating, the federation aims to foster a strong foundation of sportsmanship, speed, and strategic coordination. The upcoming league schedules, player scouting guidelines, and team roster requirements have been compiled in the official database. Explore the full range of match logs and standings dynamically updated.`,
+With 28 States and Union Territories actively participating, the federation aims to foster a strong foundation of sportsmanship, speed, and strategic coordination. The upcoming league schedules, player scouting guidelines, and team roster requirements have been compiled in the official database. Explore the full range of match logs and standings dynamically updated.`,
     date: 'July 15, 2026',
     category: 'Federation Update',
     imageUrl: 'https://i.postimg.cc/wjSqD2Dp/Screenshot-2026-07-15-132508.png',

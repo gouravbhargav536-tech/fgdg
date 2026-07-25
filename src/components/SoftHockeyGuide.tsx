@@ -269,48 +269,70 @@ export default function SoftHockeyGuide() {
 
                     {/* Quick Comparison Guide Card */}
                     <div className="lg:col-span-5 w-full">
-                      <div className="h-full p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 text-white shadow-xl flex flex-col justify-between gap-6 transition-all duration-300">
-                        <div className="space-y-5">
-                          <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
-                            <div className="p-2.5 bg-blue-500/10 rounded-xl border border-blue-500/20 shrink-0">
-                              <Info className="w-5 h-5 text-blue-400" />
-                            </div>
-                            <div>
-                              <span className="text-[9px] font-mono font-black text-blue-400 uppercase tracking-widest block">
-                                TECHNICAL SPECIFICATIONS
-                              </span>
-                              <h4 className="font-display font-bold text-lg sm:text-xl tracking-tight text-white">
+                      <div className="h-full p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#0B0F19] border border-[#1F2937] text-white shadow-2xl flex flex-col justify-between gap-6 transition-all duration-300">
+                        <div className="space-y-6">
+                          {/* Header section with section title, subtle info icon, and main title */}
+                          <div className="space-y-2 border-b border-[#1F2937] pb-5">
+                            <span className="text-[10px] font-mono font-bold text-[#9CA3AF] uppercase tracking-[0.2em] block">
+                              TECHNICAL SPECIFICATIONS
+                            </span>
+                            <div className="flex items-center gap-3">
+                              <div className="w-7 h-7 rounded-full border border-[#1F2937] bg-[#111827] flex items-center justify-center shrink-0">
+                                <Info className="w-4 h-4 text-[#9CA3AF]" />
+                              </div>
+                              <h4 className="font-display font-extrabold text-xl sm:text-2xl text-[#FFFFFF] tracking-tight uppercase">
                                 Quick Comparison Guide
                               </h4>
                             </div>
                           </div>
 
-                          {/* Clean, balanced 2-column grid layout for small screens */}
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
-                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Game Ball</span>
-                              <span className="text-blue-400 font-black text-xs sm:text-sm leading-tight block">23g Perforated Plastic</span>
+                          {/* Stacked, rounded rectangular sub-cards */}
+                          <div className="space-y-3.5">
+                            {/* Block 1 */}
+                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
+                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
+                                GAME BALL
+                              </span>
+                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
+                                23g Perforated Plastic
+                              </span>
                             </div>
 
-                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
-                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Sticks Used</span>
-                              <span className="text-blue-400 font-black text-xs sm:text-sm leading-tight block">Safe Molded Polymer</span>
+                            {/* Block 2 */}
+                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
+                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
+                                STICKS USED
+                              </span>
+                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
+                                Safe Molded Polymer
+                              </span>
                             </div>
 
-                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
-                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Contact Level</span>
-                              <span className="text-rose-400 font-black text-xs sm:text-sm leading-tight block">Strictly Non-Contact</span>
+                            {/* Block 3 */}
+                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
+                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
+                                CONTACT LEVEL
+                              </span>
+                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
+                                Strictly Non-Contact
+                              </span>
                             </div>
 
-                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
-                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Goalkeeping Style</span>
-                              <span className="text-blue-400 font-black text-xs sm:text-sm leading-tight block">Stickless & Kneeling</span>
+                            {/* Block 4 */}
+                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
+                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
+                                GOALKEEPING STYLE
+                              </span>
+                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
+                                Stickless & Kneeling
+                              </span>
                             </div>
                           </div>
                         </div>
 
-                        <div className="p-3.5 rounded-xl bg-slate-950/50 border border-slate-850">
-                          <p className="text-xs text-slate-300 italic font-medium leading-relaxed">
+                        {/* Quote Footer */}
+                        <div className="p-4 rounded-xl bg-[#111827]/60 border border-[#1F2937]">
+                          <p className="text-xs text-[#9CA3AF] italic font-medium leading-relaxed">
                             "By keeping the stick blade low and eliminating heavy body checks, players develop rapid hand speed and superior spatial movement mechanics."
                           </p>
                         </div>

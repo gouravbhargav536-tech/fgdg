@@ -114,7 +114,7 @@ const CHAMPIONSHIPS_DATA: ChampionshipEvent[] = [
     year: "2022-23",
     location: "Jaipur, Rajasthan",
     type: "National",
-    description: "The championship that solidified the 31+ states reach of the Amateur Soft Hockey Federation of India.",
+    description: "The championship that solidified the nationwide 28 States & UTs reach of the Amateur Soft Hockey Federation of India.",
     winnerMen: "Rajasthan Blue Team",
     runnerUpMen: "Maharashtra Dragons",
     winnerWomen: "Rajasthan Pink Stars",

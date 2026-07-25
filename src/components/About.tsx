@@ -39,7 +39,7 @@ export default function About() {
             </p>
 
             <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-semibold">
-              With production starting under the direction and supervision of Mr. Ramesh Singh, the game is completely made in India. To establish structured administration, the <strong className="text-slate-900 dark:text-white">Amateur Soft Hockey Federation of India (ASHFI)</strong> was established on August 15, 2021. Today, the sport is played in over 31+ states, 8,000+ primary schools, 5,000+ senior secondary schools, and recognized by 12+ leading universities.
+              With production starting under the direction and supervision of Mr. Ramesh Singh, the game is completely made in India. To establish structured administration, the <strong className="text-slate-900 dark:text-white">Amateur Soft Hockey Federation of India (ASHFI)</strong> was established on August 15, 2021. Today, the sport is played across 28 States & UTs, 8,000+ primary schools, 5,000+ senior secondary schools, and recognized by 12+ leading universities.
             </p>
 
             <div className="p-4 bg-slate-50 dark:bg-slate-950 border border-slate-150 dark:border-slate-850 rounded-2xl flex items-center justify-between text-xs font-bold text-slate-500">
@@ -60,8 +60,8 @@ export default function About() {
           {/* Right quick stats */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-150 dark:border-slate-850 space-y-2">
-              <span className="text-slate-400 text-[10px] font-mono font-black uppercase">States Coverage</span>
-              <p className="font-display font-black text-3xl text-primary dark:text-accent">31+</p>
+              <span className="text-slate-400 text-[10px] font-mono font-black uppercase">States & UTs Coverage</span>
+              <p className="font-display font-black text-3xl text-primary dark:text-accent">28</p>
               <p className="text-[10px] text-slate-500 font-semibold">Active state federations & associations</p>
             </div>
 
