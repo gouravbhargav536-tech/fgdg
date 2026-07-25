@@ -185,10 +185,10 @@ export default function ISHL() {
                 key={tIdx}
                 className="bg-slate-50 dark:bg-slate-950 border border-slate-150 dark:border-slate-850 p-5 rounded-2xl flex items-center gap-4 hover:shadow-md transition-all duration-300"
               >
-                {/* Simulated high-visibility badge or logo */}
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden shrink-0 shadow ${team.logoUrl ? 'bg-white' : team.color}`}>
+                {/* Perfect circular high-visibility badge or logo */}
+                <div className={`w-12 h-12 rounded-full aspect-square flex items-center justify-center overflow-hidden shrink-0 shadow-md border border-slate-200 dark:border-slate-800 ${team.logoUrl ? 'bg-white' : team.color}`}>
                   {team.logoUrl ? (
-                    <img src={team.logoUrl} alt={team.name} className="w-full h-full object-contain p-1" />
+                    <img src={team.logoUrl} alt={team.name} className="w-full h-full object-cover rounded-full p-0.5" />
                   ) : (
                     <span className="text-white font-mono font-black text-xs">{team.short}</span>
                   )}

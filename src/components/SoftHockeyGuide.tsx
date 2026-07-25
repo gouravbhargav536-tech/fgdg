@@ -171,76 +171,151 @@ export default function SoftHockeyGuide() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center"
+                className="space-y-10"
               >
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-black tracking-widest text-primary dark:text-accent font-mono uppercase">
-                      Wikipedia Summary & Overview
-                    </span>
-                    <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight leading-snug">
-                      What is Soft Hockey?
-                    </h3>
+                {/* TOP SECTION: Title, Logo Badge, and Overview Text */}
+                <div className="space-y-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 border-b border-slate-200/80 dark:border-slate-800/80 pb-6">
+                    {/* Perfect Circle Soft Hockey Logo */}
+                    <div className="w-14 h-14 rounded-full aspect-square border-2 border-primary/30 dark:border-accent/40 ring-2 ring-primary/10 overflow-hidden shrink-0 shadow-lg bg-slate-950 flex items-center justify-center">
+                      <img 
+                        src="https://i.postimg.cc/ydytkN33/Screenshot-2026-07-16-143140.png" 
+                        alt="ASHFI Soft Hockey Official Logo" 
+                        className="w-full h-full object-cover rounded-full" 
+                      />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-black tracking-widest text-primary dark:text-accent font-mono uppercase block">
+                        OFFICIAL ASHFI SUMMARY & OVERVIEW
+                      </span>
+                      <h3 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-slate-900 dark:text-white tracking-tight leading-snug">
+                        What is Soft Hockey?
+                      </h3>
+                    </div>
                   </div>
 
-                  <div className="space-y-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    <p>
-                      <strong>Soft Hockey</strong> (often referred to as safe indoor hockey or recreational floorball) is an athletic sport designed to offer the exhilarating pace, strategy, and hand-eye training of Field and Ice hockey while keeping physical impact and high-stick injuries to absolute zero.
-                    </p>
-                    <p>
-                      Played on a polished wooden floor, concrete, or outdoor astroturf, the game substitutes standard dense wooden hockey sticks with ultra-light, flexible, impact-absorbing polymer shafts. The heavy hard-rubber puck is replaced with a hollow aerodynamic plastic ball. This makes the game incredibly fast-paced, highly strategic, and accessible to players of all ages and genders.
-                    </p>
-                    <p>
-                      In India, the <strong>Amateur Soft Hockey Federation of India (ASHFI)</strong> acts as the central national authority, orchestrating state-level training programs, domestic cups, and supporting international camps. Jaipur's <em>SMS Stadium Hockey Ground</em> and local academies have emerged as the premier proving ground for Indian national teams.
-                    </p>
+                  {/* Summary Text Content */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                    <div className="p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60 space-y-2">
+                      <h4 className="font-display font-extrabold text-slate-900 dark:text-white text-base">Safe & Dynamic</h4>
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                        <strong>Soft Hockey</strong> (often referred to as safe indoor hockey or recreational floorball) is an athletic sport designed to offer the exhilarating pace, strategy, and hand-eye training of Field and Ice hockey while keeping physical impact and high-stick injuries to absolute zero.
+                      </p>
+                    </div>
+
+                    <div className="p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60 space-y-2">
+                      <h4 className="font-display font-extrabold text-slate-900 dark:text-white text-base">Aero Ball & Polymer Gear</h4>
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                        Played on polished indoor floors, concrete, or outdoor astroturf, the game substitutes standard heavy wooden sticks with ultra-light, flexible polymer shafts and heavy pucks with hollow 23g aerodynamic plastic balls, making the game accessible to all ages.
+                      </p>
+                    </div>
+
+                    <div className="p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60 space-y-2">
+                      <h4 className="font-display font-extrabold text-slate-900 dark:text-white text-base">Governed by ASHFI</h4>
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                        The <strong>Amateur Soft Hockey Federation of India (ASHFI)</strong> acts as the central national authority, orchestrating state-level training programs, domestic cups, and supporting international camps with Jaipur's SMS Stadium as a key hub.
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-4 pt-2">
-                    <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 text-xs font-mono font-bold text-slate-500">
+                  {/* Feature Badges */}
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-mono font-bold text-amber-700 dark:text-amber-400">
                       <Award className="w-4 h-4 text-amber-500" />
                       ASHFI Certified Standard
                     </div>
-                    <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 text-xs font-mono font-bold text-slate-500">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono font-bold text-blue-700 dark:text-blue-400">
                       <Shield className="w-4 h-4 text-blue-500" />
                       Zero-Impact Design
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                      <Sparkles className="w-4 h-4 text-emerald-500" />
+                      Non-Contact Sport
                     </div>
                   </div>
                 </div>
 
-                {/* Right Visual Callout card */}
-                <div className="lg:col-span-5">
-                  <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 text-white space-y-6 shadow-lg">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 bg-blue-500/10 rounded-xl border border-blue-500/20">
-                        <Info className="w-5 h-5 text-blue-400" />
+                {/* BOTTOM SECTION: Official Soft Hockey Action Image & Quick Comparison Guide */}
+                <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/80">
+                  <span className="text-[10px] font-black tracking-widest text-primary dark:text-accent font-mono uppercase block mb-4">
+                    MATCH VISUAL SHOWCASE & SPECIFICATIONS
+                  </span>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    {/* Official Image Frame at bottom */}
+                    <div className="lg:col-span-7 relative group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl min-h-[280px] bg-slate-950 flex flex-col justify-end">
+                      <img 
+                        src="https://i.postimg.cc/YqrbDfzM/Screenshot-2026-07-15-001348.png" 
+                        alt="Soft Hockey Action Match & Equipment Showcase" 
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                      
+                      {/* Image Overlay Label */}
+                      <div className="relative z-10 p-6 space-y-2">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/90 text-white font-mono text-[10px] font-black uppercase tracking-wider shadow">
+                          <Sparkles className="w-3 h-3 text-amber-300" />
+                          Official ASHFI Action Arena
+                        </div>
+                        <h4 className="font-display font-extrabold text-xl text-white tracking-tight">
+                          Safe Indoor & Outdoor Soft Hockey Equipment
+                        </h4>
+                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                          Lightweight polymer sticks paired with 26-hole aero balls deliver explosive velocity with maximum player safety.
+                        </p>
                       </div>
-                      <h4 className="font-display font-bold text-lg tracking-tight text-white">
-                        Quick Comparison Guide
-                      </h4>
                     </div>
 
-                    <div className="space-y-4 text-xs font-mono">
-                      <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <span className="text-slate-400 font-bold uppercase">Game Ball</span>
-                        <span className="text-blue-400 font-black">23g Perforated Plastic</span>
-                      </div>
-                      <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <span className="text-slate-400 font-bold uppercase">Sticks Used</span>
-                        <span className="text-blue-400 font-black">Safe Molded Polymer</span>
-                      </div>
-                      <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <span className="text-slate-400 font-bold uppercase">Contact Level</span>
-                        <span className="text-rose-500 font-black">Strictly Non-Contact</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-slate-400 font-bold uppercase">Goalkeeping Style</span>
-                        <span className="text-blue-400 font-black">Stickless, Kneeling</span>
+                    {/* Quick Comparison Guide Card */}
+                    <div className="lg:col-span-5 w-full">
+                      <div className="h-full p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 text-white shadow-xl flex flex-col justify-between gap-6 transition-all duration-300">
+                        <div className="space-y-5">
+                          <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
+                            <div className="p-2.5 bg-blue-500/10 rounded-xl border border-blue-500/20 shrink-0">
+                              <Info className="w-5 h-5 text-blue-400" />
+                            </div>
+                            <div>
+                              <span className="text-[9px] font-mono font-black text-blue-400 uppercase tracking-widest block">
+                                TECHNICAL SPECIFICATIONS
+                              </span>
+                              <h4 className="font-display font-bold text-lg sm:text-xl tracking-tight text-white">
+                                Quick Comparison Guide
+                              </h4>
+                            </div>
+                          </div>
+
+                          {/* Clean, balanced 2-column grid layout for small screens */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
+                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Game Ball</span>
+                              <span className="text-blue-400 font-black text-xs sm:text-sm leading-tight block">23g Perforated Plastic</span>
+                            </div>
+
+                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
+                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Sticks Used</span>
+                              <span className="text-blue-400 font-black text-xs sm:text-sm leading-tight block">Safe Molded Polymer</span>
+                            </div>
+
+                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
+                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Contact Level</span>
+                              <span className="text-rose-400 font-black text-xs sm:text-sm leading-tight block">Strictly Non-Contact</span>
+                            </div>
+
+                            <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1 flex flex-col justify-between">
+                              <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider block">Goalkeeping Style</span>
+                              <span className="text-blue-400 font-black text-xs sm:text-sm leading-tight block">Stickless & Kneeling</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 rounded-xl bg-slate-950/50 border border-slate-850">
+                          <p className="text-xs text-slate-300 italic font-medium leading-relaxed">
+                            "By keeping the stick blade low and eliminating heavy body checks, players develop rapid hand speed and superior spatial movement mechanics."
+                          </p>
+                        </div>
                       </div>
                     </div>
-
-                    <p className="text-xs text-slate-400 italic font-semibold leading-relaxed pt-2">
-                      "By keeping the stick blade low and eliminating heavy body checks, players develop incredibly rapid hand speed and superior spatial movement mechanics."
-                    </p>
                   </div>
                 </div>
               </motion.div>

@@ -358,9 +358,9 @@ export default function App() {
       />
 
       {/* Main content layouts */}
-      <main className="flex-1 mt-[80px]">
+      <main className="flex-1 mt-[70px] sm:mt-[80px] w-full px-2 sm:px-4">
         <div 
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6 py-6 rounded-3xl transition-all duration-300 border shadow-lg"
+          className="w-full max-w-7xl mx-auto my-3 sm:my-6 p-3 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 border shadow-lg overflow-x-hidden"
           style={{
             backgroundColor: 'var(--theme-card)',
             borderColor: 'var(--theme-border)',
@@ -371,11 +371,11 @@ export default function App() {
             <>
               <HeroCarousel />
               <Hero setActiveSection={handleSectionChange} />
+              <SoftHockeyGuide />
               <ImageBanner url="https://i.postimg.cc/VLvXb7W3/Screenshot-2026-07-14-235936.png" caption="Soft Hockey in Action" />
               <About />
               <ImageBanner url="https://i.postimg.cc/QMT2NkPr/Screenshot-2026-07-15-000017.png" caption="Field Play" />
               <OfficialJerseyShowcase />
-              <SoftHockeyGuide />
               <ImageBanner url="https://i.postimg.cc/HxGCbP5k/Screenshot-2026-07-14-235958.png" caption="Champions on the Ground" />
             </>
           )}

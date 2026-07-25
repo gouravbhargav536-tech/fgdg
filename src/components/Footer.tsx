@@ -125,20 +125,9 @@ export default function Footer() {
             {/* Column 1: Site Logo (white/light version), info and Socials */}
             <div className="md:col-span-4 space-y-5">
               <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleScrollTo('home')}>
-                {/* White/light version of the icon */}
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#0B1F3A] shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    className="w-5 h-5"
-                  >
-                    <path d="M5 21l14-14M17 3a2 2 0 112 2 2 2 0 01-2-2z" />
-                    <path d="M14 6l3 3" />
-                    <circle cx="9" cy="15" r="2" fill="currentColor" />
-                  </svg>
+                {/* Perfect circle ASHFI logo */}
+                <div className="relative flex items-center justify-center w-11 h-11 rounded-full aspect-square text-white shadow-lg overflow-hidden border-2 border-slate-700 shrink-0 ring-2 ring-white/10">
+                  <img src="https://i.postimg.cc/ydytkN33/Screenshot-2026-07-16-143140.png" alt="ASHFI Soft Hockey Logo" className="w-full h-full object-cover rounded-full" />
                 </div>
                 <div>
                   <span className="font-display font-black text-xl tracking-tight text-white block leading-none animate-pulse">

@@ -63,6 +63,7 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
   // Main menu items requested by the user
   const navLinks = [
     { label: 'Home', id: 'home', icon: <Home className="w-4 h-4" /> },
+    { label: 'What is Soft Hockey', id: 'soft-hockey-guide', icon: <ShieldAlert className="w-4 h-4" /> },
     { label: 'About', id: 'about', icon: <BookOpen className="w-4 h-4" /> },
     { label: 'Founder', id: 'founders', icon: <Users className="w-4 h-4" /> },
     { label: 'Team', id: 'teams', icon: <Activity className="w-4 h-4" /> },
@@ -92,28 +93,28 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
     <>
       <header
         id="main-nav"
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b shadow-sm ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b shadow-sm w-full ${
           scrolled 
-            ? 'bg-white/90 dark:bg-slate-900/95 border-slate-200 dark:border-slate-800 backdrop-blur-md py-2.5' 
-            : 'bg-white dark:bg-slate-900 border-slate-150 dark:border-slate-850 backdrop-blur-md py-4'
+            ? 'bg-white/90 dark:bg-slate-900/95 border-slate-200 dark:border-slate-800 backdrop-blur-md py-2 sm:py-2.5' 
+            : 'bg-white dark:bg-slate-900 border-slate-150 dark:border-slate-850 backdrop-blur-md py-3 sm:py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 w-full">
             
             {/* Logo area representing ASHFI */}
             <div
-              className="flex items-center gap-2.5 cursor-pointer group"
+              className="flex items-center gap-2 sm:gap-2.5 cursor-pointer group shrink-0"
               onClick={() => handleLinkClick('home')}
             >
-              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl text-white shadow-md transform group-hover:scale-[1.03] transition-transform duration-300 overflow-hidden">
-                <img src="https://i.postimg.cc/fySnWtR1/Screenshot-2026-07-15-142120.png" alt="ASHFI Logo" className="w-full h-full object-cover" />
+              <div className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full aspect-square text-white shadow-md transform group-hover:scale-[1.05] transition-transform duration-300 overflow-hidden border-2 border-primary/30 dark:border-accent/40 ring-2 ring-primary/10 shrink-0">
+                <img src="https://i.postimg.cc/ydytkN33/Screenshot-2026-07-16-143140.png" alt="ASHFI Soft Hockey Logo" className="w-full h-full object-cover rounded-full" />
               </div>
-              <div>
-                <span className="font-display font-black text-xl tracking-tight text-blue-900 dark:text-white block leading-none">
+              <div className="flex flex-col justify-center">
+                <span className="font-display font-black text-lg sm:text-xl tracking-tight text-blue-900 dark:text-white block leading-none">
                   ASHFI
                 </span>
-                <span className="font-display text-[9px] font-black tracking-widest text-pink-600 block mt-0.5 uppercase">
+                <span className="font-display text-[8px] sm:text-[9px] font-black tracking-widest text-pink-600 block mt-0.5 uppercase">
                   Soft Hockey India
                 </span>
               </div>
@@ -140,12 +141,12 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
             </nav>
 
             {/* Controls (Theme Toggle & Drawer Trigger) */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
               
               {/* Single "Change Theme" Button with Palette icon */}
               <button
                 onClick={() => setThemeModalOpen(true)}
-                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-300 cursor-pointer shadow-md border flex items-center justify-center gap-2 select-none font-mono font-black text-[10px] uppercase tracking-wider ${
+                className={`px-2.5 py-2 sm:px-4 sm:py-2 rounded-full transition-all duration-300 cursor-pointer shadow-md border flex items-center justify-center gap-1.5 sm:gap-2 select-none font-mono font-black text-[10px] uppercase tracking-wider min-h-[38px] sm:min-h-[42px] ${
                   !darkMode 
                     ? 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50' 
                     : 'bg-slate-900 border-slate-800 text-slate-200 hover:bg-slate-800'
@@ -153,14 +154,15 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
                 title="Change Color Theme"
                 aria-label="Change Color Theme"
               >
-                <Palette className="w-4 h-4 text-pink-500" />
-                <span>Change Theme</span>
+                <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500" />
+                <span className="hidden sm:inline">Change Theme</span>
+                <span className="sm:hidden text-[9px]">Theme</span>
               </button>
 
               {/* Theme Mode toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className={`p-2.5 rounded-full transition-all duration-300 cursor-pointer shadow-md border ${
+                className={`p-2 sm:p-2.5 rounded-full transition-all duration-300 cursor-pointer shadow-md border min-w-[38px] min-h-[38px] sm:min-w-[42px] sm:min-h-[42px] flex items-center justify-center ${
                   !darkMode 
                     ? 'bg-gradient-to-tr from-pink-100 to-blue-100 border-pink-300 text-pink-600 hover:scale-105 shadow-pink-200/50' 
                     : 'bg-slate-950 text-slate-300 border-slate-850 hover:bg-slate-800 border-slate-800'
@@ -177,11 +179,11 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
               {/* Hamburger Button for Mobile/Tablet */}
               <button
                 onClick={() => setDrawerOpen(true)}
-                className="relative py-2.5 px-4 bg-gradient-to-r from-blue-900 to-sky-700 text-white cursor-pointer transition-all duration-300 select-none shadow-md rounded-xl flex items-center justify-center gap-1.5 font-display font-black text-[10px] uppercase tracking-widest hover:brightness-105 active:translate-y-0.5"
+                className="relative py-2 px-3 sm:py-2.5 sm:px-4 min-h-[38px] sm:min-h-[42px] bg-gradient-to-r from-blue-900 to-sky-700 text-white cursor-pointer transition-all duration-300 select-none shadow-md rounded-xl flex items-center justify-center gap-1.5 font-display font-black text-[10px] uppercase tracking-widest hover:brightness-105 active:translate-y-0.5"
                 aria-label="Open Navigation Drawer"
               >
                 <Menu className="w-4 h-4" />
-                <span>Menu</span>
+                <span className="hidden xs:inline">Menu</span>
               </button>
 
             </div>
