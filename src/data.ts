@@ -550,15 +550,15 @@ With 28 States and Union Territories actively participating, the federation aims
   },
   {
     id: 'news-1',
-    title: 'Hockey India League Returns with Grand Vision and Unified Men & Women Divisions',
-    excerpt: 'The highly anticipated Hockey India League (HIL) enters a historic era, introducing a concurrent women’s competition alongside the core men’s championship.',
-    content: `The legendary Hockey India League (HIL) has officially marked its triumphant return to the global sporting calendar, setting a benchmark for international hockey development. Under the stewardship of Hockey India and backed by government patronage, the league returns with a historic milestone: the introduction of a concurrent Women's Division.
+    title: 'Soft Hockey National League Returns with Grand Vision and Unified Men & Women Divisions',
+    excerpt: 'The highly anticipated Soft Hockey National League (SHNL) enters a historic era under ASHFI, introducing a concurrent women’s competition alongside the core men’s championship.',
+    content: `The Amateur Soft Hockey Federation of India (ASHFI) has officially marked the grand schedule for the Soft Hockey National League, setting a benchmark for safe, fast-paced sports development. Under the stewardship of ASHFI and founder Mr. Ramesh Singh, the league features a historic milestone: the introduction of a concurrent Women's Division.
 
-For the first time ever, six elite women’s clubs will battle alongside the legendary six men's franchises, offering equal match-day billing, state-of-the-art facilities, and competitive payrolls. 
+For the first time ever, top state women’s teams will battle alongside premier men's state franchises, offering equal match-day billing, safe polymer sticks, and 23g perforated plastic balls on high-speed courts. 
 
-"Our primary mission has always been the upliftment of Indian hockey at both grassroots and elite professional platforms," stated Hockey India leadership. "By providing our incredible women athletes with the same grand stage as their male counterparts, we are accelerating India’s pathway to Olympic dominance."
+"Our primary mission has always been the upliftment of Soft Hockey across Indian schools, colleges, and national platforms," stated ASHFI leadership. "By providing our incredible women athletes with the same grand stage as their male counterparts, we are accelerating India’s pathway to national sports excellence."
 
-The double-round robin schedule kicks off across multi-city hubs including New Delhi, Bhubaneswar, Ranchi, and Gwalior, featuring world-class turf systems, electronic video review technologies, and elite international officiating. Fans around the world can look forward to high-velocity contests, tactical innovations, and the emergence of the next generation of global hockey stars.`,
+The double-round robin schedule kicks off across multi-city hubs including Jaipur (SMS Stadium), New Delhi, Bhubaneswar, and Gwalior, featuring certified referees, Electronic Video Review, and elite speed metrics. Fans can look forward to high-velocity contests, tactical innovations, and the emergence of the next generation of Soft Hockey stars.`,
     date: 'July 12, 2026',
     category: 'League Announcement',
     imageUrl: 'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?q=80&w=600&auto=format&fit=crop',
@@ -667,9 +667,9 @@ export const VIDEOS: HighlightVideo[] = [
 export const CAROUSEL_SLIDES = [
   {
     id: 1,
-    title: "A NEW ERA OF INDIAN HOCKEY",
-    subtitle: "Hockey India League 2026",
-    tagline: "Experience high-octane sporting action featuring the world's finest drag-flickers and playmakers. The ultimate clash of hockey titans returns with active Men's & Women's leagues!",
+    title: "A NEW ERA OF SOFT HOCKEY",
+    subtitle: "Amateur Soft Hockey Federation of India",
+    tagline: "Experience high-octane Soft Hockey action featuring India's finest speedsters and tactical playmakers. The safe, non-contact sport crafted in Jaipur under ASHFI!",
     image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop",
     ctaText: "Explore Matches",
     ctaTarget: "matches"

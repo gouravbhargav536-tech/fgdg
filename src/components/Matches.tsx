@@ -106,14 +106,14 @@ export default function Matches({ division, setDivision }: MatchesProps) {
             const element = document.createElement("a");
             const file = new Blob([
               `=======================================================\n`,
-              `         HOCKEY INDIA LEAGUE - OFFICIAL FIXTURES        \n`,
+              `    AMATEUR SOFT HOCKEY FEDERATION OF INDIA - FIXTURES \n`,
               `               ${div.toUpperCase()}'S LEAGUE DIVISION DIVISION\n`,
               `=======================================================\n\n`,
               fixturesText,
               `\nGenerated on: ${new Date().toLocaleDateString()}\nAll timings are in IST (Indian Standard Time).\n`
             ], {type: 'text/plain'});
             element.href = URL.createObjectURL(file);
-            element.download = `HIL_Fixtures_Schedule_${div}_Division.pdf`; // Downloadable as .pdf (formatted print representation)
+            element.download = `Soft_Hockey_Fixtures_Schedule_${div}_Division.pdf`; // Downloadable as .pdf (formatted print representation)
             document.body.appendChild(element);
             element.click();
             document.body.removeChild(element);

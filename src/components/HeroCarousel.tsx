@@ -124,7 +124,7 @@ export default function HeroCarousel() {
       <div className="absolute bottom-12 left-6 md:left-12 z-20 max-w-xl text-left pointer-events-none transition-all duration-300">
         <div className="space-y-2 animate-fade-in-up">
           <span className="inline-block px-2.5 py-0.5 rounded bg-amber-500 text-slate-950 text-[10px] font-mono uppercase font-black tracking-widest">
-            HOCKEY INDIA LEAGUE
+            AMATEUR SOFT HOCKEY FEDERATION OF INDIA
           </span>
           <h2 className="font-display text-2xl md:text-4xl font-black text-white uppercase tracking-tight drop-shadow-md">
             {SLIDE_TITLES[activeIndex]}

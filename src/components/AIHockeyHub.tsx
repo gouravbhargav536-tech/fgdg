@@ -106,13 +106,13 @@ const OFFICIAL_PORTALS = [
 
 const QUICK_PROMPTS: QuickPrompt[] = [
   {
-    label: "Khelo India and SAI Schemes for Hockey",
-    query: "What are the latest Sports Authority of India (SAI) schemes, scholarships, and academy initiatives for hockey and youth talent?",
+    label: "Khelo India and SAI Schemes for Soft Hockey",
+    query: "What are the latest Sports Authority of India (SAI) schemes, scholarships, and school sports initiatives for Soft Hockey talent?",
     icon: <Building2 className="w-4 h-4 text-orange-500" />
   },
   {
-    label: "Hockey India League 2026 Rules & Status",
-    query: "What is the latest status, schedule, and structure of the Hockey India League (HIL) 2026 including the men and women divisions?",
+    label: "Soft Hockey National League Rules & Status",
+    query: "What is the latest status, schedule, and tournament structure of the Soft Hockey National Championships including men and women divisions?",
     icon: <Award className="w-4 h-4 text-emerald-500" />
   },
   {
@@ -195,7 +195,7 @@ export default function AIHockeyHub() {
               Ask any Hockey Question (पूंछें हॉकी से जुड़े सवाल)
             </h3>
             <p className="text-slate-500 dark:text-slate-400 text-xs font-semibold leading-relaxed">
-              Our AI automatically queries live government databases, Hockey India press releases, and world federation portals to retrieve precise, non-hallucinated results complete with source citations.
+              Our AI automatically queries live government databases, ASHFI press releases, and sports federation portals to retrieve precise, non-hallucinated results complete with source citations.
             </p>
           </div>
 
@@ -205,7 +205,7 @@ export default function AIHockeyHub() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Ask about Hockey India tournaments, Soft Hockey safety guidelines, or government SAI schemes..."
+              placeholder="Ask about Soft Hockey tournaments, ASHFI safety guidelines, or government sports schemes..."
               className="w-full pl-12 pr-32 py-4 bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-2xl text-slate-900 dark:text-white text-sm focus:outline-none focus:border-primary dark:focus:border-accent font-medium shadow-inner transition-colors placeholder:text-slate-400"
             />
             <div className="absolute left-4 text-slate-400">
