@@ -18,6 +18,7 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
   const [themeModalOpen, setThemeModalOpen] = useState(false);
 
   const themeColors = [
+    { id: 'light-blue', name: 'Official Light (White)', colorCode: '#FFFFFF', bgPreview: 'linear-gradient(135deg, #FFFFFF 0%, #E6F1FB 100%)' },
     { id: 'navy', name: 'Navy', colorCode: '#0B1220', bgPreview: 'linear-gradient(135deg, #0B1220 0%, #122240 100%)' },
     { id: 'deep-forest', name: 'Forest Green', colorCode: '#052016', bgPreview: 'linear-gradient(135deg, #052016 0%, #0D3E2F 100%)' },
     { id: 'sunset-glow', name: 'Sunset Violet', colorCode: '#1E122A', bgPreview: 'linear-gradient(135deg, #1E122A 0%, #3B1B3C 50%, #5E263D 100%)' },
@@ -27,7 +28,6 @@ export default function Header({ darkMode, setDarkMode, activeSection, setActive
     { id: 'royal-amber', name: 'Golden Amber', colorCode: '#171105', bgPreview: 'linear-gradient(135deg, #171105 0%, #2F2107 100%)' },
     { id: 'plum-velvet', name: 'Plum Grape', colorCode: '#14051B', bgPreview: 'linear-gradient(135deg, #14051B 0%, #2E103E 100%)' },
     { id: 'cyber-teal', name: 'Cyber Cyan', colorCode: '#020C1B', bgPreview: 'linear-gradient(135deg, #020C1B 0%, #0A2E5C 100%)' },
-    { id: 'light-blue', name: 'Light Blue', colorCode: '#E6F1FB', bgPreview: 'linear-gradient(135deg, #E6F1FB 0%, #F5FAFE 100%)' },
     { id: 'gradient-blue', name: 'Gradient Blue', colorCode: '#123354', bgPreview: 'linear-gradient(160deg, #0B1220 0%, #123354 60%, #185FA5 130%)' },
     { id: 'mint', name: 'Mint Green', colorCode: '#EAF3DE', bgPreview: 'linear-gradient(135deg, #EAF3DE 0%, #F5FBF6 100%)' },
     { id: 'citrus-cream', name: 'Citrus Yellow', colorCode: '#FDF5E2', bgPreview: 'linear-gradient(135deg, #FDF5E2 0%, #FFFDF8 100%)' },

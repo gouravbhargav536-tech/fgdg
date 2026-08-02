@@ -235,108 +235,132 @@ export default function SoftHockeyGuide() {
                   </div>
                 </div>
 
-                {/* BOTTOM SECTION: Official Soft Hockey Action Image & Quick Comparison Guide */}
-                <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/80">
-                  <span className="text-[10px] font-black tracking-widest text-primary dark:text-accent font-mono uppercase block mb-4">
-                    MATCH VISUAL SHOWCASE & SPECIFICATIONS
-                  </span>
-                  
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                    {/* Official Image Frame at bottom */}
-                    <div className="lg:col-span-7 relative group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl min-h-[280px] bg-slate-950 flex flex-col justify-end">
-                      <img 
-                        src="https://i.postimg.cc/YqrbDfzM/Screenshot-2026-07-15-001348.png" 
-                        alt="Soft Hockey Action Match & Equipment Showcase" 
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                      
-                      {/* Image Overlay Label */}
-                      <div className="relative z-10 p-6 space-y-2">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/90 text-white font-mono text-[10px] font-black uppercase tracking-wider shadow">
-                          <Sparkles className="w-3 h-3 text-amber-300" />
-                          Official ASHFI Action Arena
+                {/* BOTTOM SECTION: Crisp SVG Vector Equipment Illustration & Stadium Scoreboard Strip */}
+                <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800/80 space-y-8">
+                  {/* Clean, Scalable SVG Vector Illustration of Stick and 23g Aero Ball (No cropping, pixelation, or blur) */}
+                  <div className="w-full relative rounded-2xl overflow-hidden bg-[#070A12] border border-[#1F2937] p-6 sm:p-8 shadow-2xl">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                      {/* Left: Text & Vector Spec Callouts */}
+                      <div className="space-y-4 max-w-md text-left">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-[10px] font-black uppercase tracking-widest">
+                          <Sparkles className="w-3 h-3 text-amber-400" />
+                          VECTOR EQUIPMENT SCHEMATIC
                         </div>
-                        <h4 className="font-display font-extrabold text-xl text-white tracking-tight">
-                          Safe Indoor & Outdoor Soft Hockey Equipment
+                        <h4 className="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
+                          Safe Polymer Stick & 26-Hole Aero Ball
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
-                          Lightweight polymer sticks paired with 26-hole aero balls deliver explosive velocity with maximum player safety.
+                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
+                          Precision-engineered for explosive indoor & outdoor velocity without impact hazards. Non-wearing molded polymer blade paired with high-density aero plastic.
                         </p>
                       </div>
-                    </div>
 
-                    {/* Quick Comparison Guide Card */}
-                    <div className="lg:col-span-5 w-full">
-                      <div className="h-full p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#0B0F19] border border-[#1F2937] text-white shadow-2xl flex flex-col justify-between gap-6 transition-all duration-300">
-                        <div className="space-y-6">
-                          {/* Header section with section title, subtle info icon, and main title */}
-                          <div className="space-y-2 border-b border-[#1F2937] pb-5">
-                            <span className="text-[10px] font-mono font-bold text-[#9CA3AF] uppercase tracking-[0.2em] block">
-                              TECHNICAL SPECIFICATIONS
-                            </span>
-                            <div className="flex items-center gap-3">
-                              <div className="w-7 h-7 rounded-full border border-[#1F2937] bg-[#111827] flex items-center justify-center shrink-0">
-                                <Info className="w-4 h-4 text-[#9CA3AF]" />
-                              </div>
-                              <h4 className="font-display font-extrabold text-xl sm:text-2xl text-[#FFFFFF] tracking-tight uppercase">
-                                Quick Comparison Guide
-                              </h4>
-                            </div>
-                          </div>
+                      {/* Right: Scalable SVG Graphic */}
+                      <div className="w-full max-w-md h-52 sm:h-60 relative flex items-center justify-center bg-[#0B0F19]/90 rounded-xl border border-[#1F2937] p-4">
+                        <svg className="w-full h-full" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          {/* Grid Background Lines */}
+                          <defs>
+                            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" strokeWidth="0.5" />
+                            </pattern>
+                            <linearGradient id="stickGrad" x1="0" y1="0" x2="300" y2="150" gradientUnits="userSpaceOnUse">
+                              <stop offset="0%" stopColor="#3B82F6" />
+                              <stop offset="100%" stopColor="#1D4ED8" />
+                            </linearGradient>
+                            <radialGradient id="ballGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 100) scale(35)">
+                              <stop offset="0%" stopColor="#38BDF8" />
+                              <stop offset="70%" stopColor="#0284C7" />
+                              <stop offset="100%" stopColor="#0369A1" />
+                            </radialGradient>
+                          </defs>
 
-                          {/* Stacked, rounded rectangular sub-cards */}
-                          <div className="space-y-3.5">
-                            {/* Block 1 */}
-                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
-                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
-                                GAME BALL
-                              </span>
-                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
-                                23g Perforated Plastic
-                              </span>
-                            </div>
+                          <rect width="400" height="200" fill="url(#grid)" opacity="0.6" />
 
-                            {/* Block 2 */}
-                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
-                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
-                                STICKS USED
-                              </span>
-                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
-                                Safe Molded Polymer
-                              </span>
-                            </div>
+                          {/* Soft Hockey Stick Shaft */}
+                          <path d="M 40 30 L 220 145" stroke="url(#stickGrad)" strokeWidth="12" strokeLinecap="round" />
+                          <path d="M 40 30 L 220 145" stroke="#FFFFFF" strokeWidth="2" strokeDasharray="6 4" opacity="0.4" />
+                          
+                          {/* Grip Wrap Texturing */}
+                          <line x1="45" y1="34" x2="52" y2="40" stroke="#93C5FD" strokeWidth="2" />
+                          <line x1="55" y1="41" x2="62" y2="47" stroke="#93C5FD" strokeWidth="2" />
+                          <line x1="65" y1="48" x2="72" y2="54" stroke="#93C5FD" strokeWidth="2" />
 
-                            {/* Block 3 */}
-                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
-                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
-                                CONTACT LEVEL
-                              </span>
-                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
-                                Strictly Non-Contact
-                              </span>
-                            </div>
+                          {/* Stick Curved Blade (Honeycomb Polymer) */}
+                          <path d="M 220 145 C 240 158, 275 160, 290 148 C 295 144, 285 132, 260 138 C 245 142, 228 135, 220 145 Z" fill="#2563EB" stroke="#60A5FA" strokeWidth="2" />
+                          
+                          {/* Blade Honeycomb Ventilation Slots */}
+                          <ellipse cx="245" cy="148" rx="4" ry="2" fill="#0B0F19" />
+                          <ellipse cx="258" cy="149" rx="4" ry="2" fill="#0B0F19" />
+                          <ellipse cx="271" cy="147" rx="4" ry="2" fill="#0B0F19" />
 
-                            {/* Block 4 */}
-                            <div className="p-4 rounded-xl bg-[#111827] border border-[#1F2937] space-y-1 transition-all duration-200 hover:border-slate-700">
-                              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9CA3AF] block">
-                                GOALKEEPING STYLE
-                              </span>
-                              <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] block tracking-wide">
-                                Stickless & Kneeling
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+                          {/* 23g 26-Hole Aero Ball */}
+                          <circle cx="315" cy="140" r="26" fill="url(#ballGrad)" stroke="#7DD3FC" strokeWidth="2" />
+                          
+                          {/* 26 Air-Aero Holes on Ball */}
+                          <circle cx="305" cy="130" r="3.5" fill="#030712" />
+                          <circle cx="320" cy="128" r="3.5" fill="#030712" />
+                          <circle cx="328" cy="138" r="3.5" fill="#030712" />
+                          <circle cx="312" cy="142" r="3.5" fill="#030712" />
+                          <circle cx="302" cy="145" r="3.5" fill="#030712" />
+                          <circle cx="322" cy="152" r="3.5" fill="#030712" />
+                          <circle cx="310" cy="154" r="3" fill="#030712" />
 
-                        {/* Quote Footer */}
-                        <div className="p-4 rounded-xl bg-[#111827]/60 border border-[#1F2937]">
-                          <p className="text-xs text-[#9CA3AF] italic font-medium leading-relaxed">
-                            "By keeping the stick blade low and eliminating heavy body checks, players develop rapid hand speed and superior spatial movement mechanics."
-                          </p>
-                        </div>
+                          {/* Velocity Airflow Trails */}
+                          <path d="M 345 130 C 360 128, 375 132, 385 130" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 3" />
+                          <path d="M 345 140 C 362 140, 378 140, 390 140" stroke="#38BDF8" strokeWidth="2" />
+                          <path d="M 345 150 C 358 152, 372 148, 385 150" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="3 3" />
+
+                          {/* Vector Technical Labels */}
+                          <text x="50" y="22" fill="#94A3B8" fontSize="9" fontFamily="monospace" fontWeight="bold">SAFE POLYMER SHAFT</text>
+                          <text x="290" y="185" fill="#38BDF8" fontSize="10" fontFamily="monospace" fontWeight="bold">23g AERO BALL (26 HOLES)</text>
+                        </svg>
                       </div>
+                    </div>
+                  </div>
+
+                  {/* CONTINUOUS SCOREBOARD STRIP (Real stadium scoreboard band — no rounded inner boxes or shadows) */}
+                  <div className="w-full bg-[#0B0F19] border-y border-[#1F2937]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#1F2937]">
+                      
+                      {/* Scoreboard Column 1 */}
+                      <div className="p-4 sm:p-6 text-center space-y-1">
+                        <span className="text-[10px] font-mono font-bold text-[#9CA3AF] uppercase tracking-[0.18em] block">
+                          GAME BALL
+                        </span>
+                        <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] font-mono tracking-wide block">
+                          23g Perforated Plastic
+                        </span>
+                      </div>
+
+                      {/* Scoreboard Column 2 */}
+                      <div className="p-4 sm:p-6 text-center space-y-1">
+                        <span className="text-[10px] font-mono font-bold text-[#9CA3AF] uppercase tracking-[0.18em] block">
+                          STICKS USED
+                        </span>
+                        <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] font-mono tracking-wide block">
+                          Safe Molded Polymer
+                        </span>
+                      </div>
+
+                      {/* Scoreboard Column 3 */}
+                      <div className="p-4 sm:p-6 text-center space-y-1">
+                        <span className="text-[10px] font-mono font-bold text-[#9CA3AF] uppercase tracking-[0.18em] block">
+                          CONTACT LEVEL
+                        </span>
+                        <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] font-mono tracking-wide block">
+                          Strictly Non-Contact
+                        </span>
+                      </div>
+
+                      {/* Scoreboard Column 4 */}
+                      <div className="p-4 sm:p-6 text-center space-y-1">
+                        <span className="text-[10px] font-mono font-bold text-[#9CA3AF] uppercase tracking-[0.18em] block">
+                          GOALKEEPING
+                        </span>
+                        <span className="text-sm sm:text-base font-extrabold text-[#FFFFFF] font-mono tracking-wide block">
+                          Stickless & Kneeling
+                        </span>
+                      </div>
+
                     </div>
                   </div>
                 </div>

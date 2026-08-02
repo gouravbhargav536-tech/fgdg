@@ -39,8 +39,11 @@ export default function App() {
     return (saved === 'Women' || saved === 'Men') ? saved : 'Men';
   });
 
-  // Multiple Color Theme State (No localStorage required, defaults to navy)
-  const [colorTheme, setColorTheme] = useState<string>('navy');
+  // Multiple Color Theme State (defaults to light-blue for official white theme)
+  const [colorTheme, setColorTheme] = useState<string>(() => {
+    const saved = localStorage.getItem('ashfi_color_theme');
+    return saved || 'light-blue';
+  });
 
   const handleSetDivision = (val: 'Men' | 'Women') => {
     setDivision(val);
@@ -156,9 +159,9 @@ export default function App() {
         isDark: true
       },
       'light-blue': {
-        bg: 'linear-gradient(135deg, #E6F1FB 0%, #F5FAFE 100%)',
+        bg: '#FFFFFF',
         heading: '#0C2E4E',
-        body: '#334966',
+        body: '#1E293B',
         accent: '#0284C7',
         card: '#FFFFFF',
         border: 'rgba(12, 46, 78, 0.12)',
@@ -256,7 +259,7 @@ export default function App() {
       }
     };
 
-    const currentTheme = themes[colorTheme] || themes['navy'];
+    const currentTheme = themes[colorTheme] || themes['light-blue'];
 
     // Update root style variables for seamless global application
     root.style.setProperty('--theme-bg', currentTheme.bg);
@@ -293,6 +296,7 @@ export default function App() {
 
   const handleSetColorTheme = (theme: string) => {
     setColorTheme(theme);
+    localStorage.setItem('ashfi_color_theme', theme);
   };
 
   const handleSetDarkMode = (val: boolean) => {
@@ -358,58 +362,49 @@ export default function App() {
       />
 
       {/* Main content layouts */}
-      <main className="flex-1 mt-[70px] sm:mt-[80px] w-full px-2 sm:px-4">
-        <div 
-          className="w-full max-w-7xl mx-auto my-3 sm:my-6 p-3 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 border shadow-lg overflow-x-hidden"
-          style={{
-            backgroundColor: 'var(--theme-card)',
-            borderColor: 'var(--theme-border)',
-            color: 'var(--theme-body)'
-          }}
-        >
-          {activeSection === 'home' && (
-            <>
-              <HeroCarousel />
-              <Hero setActiveSection={handleSectionChange} />
-              <SoftHockeyGuide />
-              <ImageBanner url="https://i.postimg.cc/VLvXb7W3/Screenshot-2026-07-14-235936.png" caption="Soft Hockey in Action" />
-              <About />
-              <ImageBanner url="https://i.postimg.cc/QMT2NkPr/Screenshot-2026-07-15-000017.png" caption="Field Play" />
-              <OfficialJerseyShowcase />
-              <ImageBanner url="https://i.postimg.cc/HxGCbP5k/Screenshot-2026-07-14-235958.png" caption="Champions on the Ground" />
-            </>
-          )}
-          
-          {activeSection === 'about' && <About />}
-          
-          {activeSection === 'founders' && <Founders />}
-          
-          {activeSection === 'teams' && (
-            <Teams division={division} setDivision={handleSetDivision} />
-          )}
-          
-          {activeSection === 'championships' && <Championships />}
-          
-          {activeSection === 'ishl' && <ISHL />}
-          
-          {activeSection === 'gallery' && <Gallery />}
+      <main className="flex-1 mt-[70px] sm:mt-[80px] w-full overflow-x-hidden">
+        {activeSection === 'home' && (
+          <>
+            <HeroCarousel />
+            <Hero setActiveSection={handleSectionChange} />
+            <SoftHockeyGuide />
+            <ImageBanner url="https://i.postimg.cc/VLvXb7W3/Screenshot-2026-07-14-235936.png" caption="Soft Hockey in Action" />
+            <About />
+            <ImageBanner url="https://i.postimg.cc/QMT2NkPr/Screenshot-2026-07-15-000017.png" caption="Field Play" />
+            <OfficialJerseyShowcase />
+            <ImageBanner url="https://i.postimg.cc/HxGCbP5k/Screenshot-2026-07-14-235958.png" caption="Champions on the Ground" />
+          </>
+        )}
+        
+        {activeSection === 'about' && <About />}
+        
+        {activeSection === 'founders' && <Founders />}
+        
+        {activeSection === 'teams' && (
+          <Teams division={division} setDivision={handleSetDivision} />
+        )}
+        
+        {activeSection === 'championships' && <Championships />}
+        
+        {activeSection === 'ishl' && <ISHL />}
+        
+        {activeSection === 'gallery' && <Gallery />}
 
-          {activeSection === 'official-links' && <OfficialLinks />}
-          
-          {activeSection === 'join-donate' && <JoinDonate />}
-          
-          {activeSection === 'contact' && <ContactSection />}
+        {activeSection === 'official-links' && <OfficialLinks />}
+        
+        {activeSection === 'join-donate' && <JoinDonate />}
+        
+        {activeSection === 'contact' && <ContactSection />}
 
-          {/* Keeping support segments like directory / matches / news fully integrated */}
-          {activeSection === 'official-hockey-directory' && <AIHockeyHub />}
-          {activeSection === 'news' && <News />}
-          {activeSection === 'soft-hockey-guide' && <SoftHockeyGuide />}
-          {activeSection === 'matches' && <Matches division={division} setDivision={handleSetDivision} />}
-          {activeSection === 'standings' && <Standings division={division} setDivision={handleSetDivision} />}
-          {activeSection === 'statistics' && <Statistics />}
-          {activeSection === 'videos' && <Videos />}
-          {activeSection === 'where-to-watch' && <WhereToWatch />}
-        </div>
+        {/* Keeping support segments like directory / matches / news fully integrated */}
+        {activeSection === 'official-hockey-directory' && <AIHockeyHub />}
+        {activeSection === 'news' && <News />}
+        {activeSection === 'soft-hockey-guide' && <SoftHockeyGuide />}
+        {activeSection === 'matches' && <Matches division={division} setDivision={handleSetDivision} />}
+        {activeSection === 'standings' && <Standings division={division} setDivision={handleSetDivision} />}
+        {activeSection === 'statistics' && <Statistics />}
+        {activeSection === 'videos' && <Videos />}
+        {activeSection === 'where-to-watch' && <WhereToWatch />}
       </main>
 
       {/* Sponsors Infinite Marquee (Animated Brand sponsors requested) */}
